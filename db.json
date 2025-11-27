@@ -153,6 +153,12 @@
             "lastName": "Boboyev",
             "_login": "oris123",
             "_password": "oris123"
+        },
+        {
+            "firstName": "Muhammadamin",
+            "lastName": "Usmanov",
+            "_login": "Usmanov001100",
+            "_password": "usmv001100"
         }
     ]
 }
