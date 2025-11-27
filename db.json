@@ -1,0 +1,158 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "category": "Smartfon",
+            "title": "iPhone 14 Pro 128GB",
+            "price": 12500000,
+            "price_month": {
+                "9": 1650000,
+                "12": 1300000,
+                "18": 890000,
+                "24": 690000
+            },
+            "description": "iPhone 14 Pro — Apple’ning eng kuchli flagmanlaridan biri. Dynamic Island interfeysi, 48MP asosiy kamera, kinokadr stabilizatsiyasi va A16 Bionic chipi bilan yuqori tezlikdagi ishlashni ta’minlaydi. 120Hz ProMotion displey videolar, o‘yinlar va multimedia uchun ideal. Uzoq muddatli akkumulyator va premium dizayn bu modelni yanada jozibador qiladi.",
+            "rating": 4.9
+        },
+        {
+            "id": 2,
+            "category": "Noutbuk",
+            "title": "ASUS TUF Gaming F15",
+            "price": 9800000,
+            "price_month": {
+                "9": 1350000,
+                "12": 1080000,
+                "18": 760000,
+                "24": 600000
+            },
+            "description": "ASUS TUF Gaming F15 kuchli Intel i5 protsessori va RTX 3050 videokartasi bilan zamonaviy o‘yinlar va og‘ir dasturlarni bemalol bajara oladi. 144Hz ekran o‘yin jarayonini juda silliq ko‘rsatadi. Korpus mustahkam va harbiy standartlarga javob beradi. Sovutish tizimi uzoq play sessionlarda ham barqaror ishlashni ta’minlaydi.",
+            "rating": 4.7
+        },
+        {
+            "id": 3,
+            "category": "Televizor",
+            "title": "Samsung 55\" QLED 4K TV",
+            "price": 8700000,
+            "price_month": {
+                "9": 1200000,
+                "12": 950000,
+                "18": 690000,
+                "24": 520000
+            },
+            "description": "Samsung QLED 4K televizori yorqin ranglar, yuqori kontrast va HDR10+ texnologiyasi bilan tomosha tajribasini butunlay yangi darajaga olib chiqadi. Smart TV tizimi orqali Netflix, YouTube va boshqa ilovalarni tezkor ishlatish mumkin. Ovoz tizimi kuchli va xonani to'liq to‘ldiradi.",
+            "rating": 4.8
+        },
+        {
+            "id": 4,
+            "category": "Maishiy texnika",
+            "title": "LG 7kg Automatic Washing Machine",
+            "price": 4300000,
+            "price_month": {
+                "9": 590000,
+                "12": 470000,
+                "18": 330000,
+                "24": 260000
+            },
+            "description": "LG'ning 7kg kir yuvish mashinasi inverter motor bilan jim va tejamkor ishlaydi. 14 xil yuvish rejimi turli matolar uchun maksimal natija beradi. Tez yuvish funksiyasi kundalik hayotda juda qulay. Keng barabani ko‘p kiyimlarni bir vaqtda yuvishga imkon beradi.",
+            "rating": 4.6
+        },
+        {
+            "id": 5,
+            "category": "Smartfon",
+            "title": "Samsung Galaxy A54",
+            "price": 4200000,
+            "price_month": {
+                "9": 570000,
+                "12": 450000,
+                "18": 320000,
+                "24": 250000
+            },
+            "description": "Galaxy A54 — o‘rta segmentdagi eng ommabop smartfonlardan biri. 120Hz Super AMOLED displey, 50MP kamera va 5000mAh akkumulyator kundalik foydalanish uchun ideal. Qurilma suvga chidamli (IP67), bu uni yanada mustahkam qiladi.",
+            "rating": 4.5
+        },
+        {
+            "id": 6,
+            "category": "Planshet",
+            "title": "iPad 10th Gen 64GB",
+            "price": 5500000,
+            "price_month": {
+                "9": 780000,
+                "12": 620000,
+                "18": 445000,
+                "24": 350000
+            },
+            "description": "iPad 10-avlodi A14 Bionic chipi yordamida o‘yinlar, multimediyalar, o‘qish va rasm chizish uchun juda kuchli imkoniyatlar yaratadi. Katta 10.9\" Liquid Retina displey ranglarni aniq ko‘rsatadi. Apple Pencil va Magic Keyboard qo‘llab-quvvatlashi uni ish va o‘qish uchun eng yaxshi tanlovga aylantiradi.",
+            "rating": 4.7
+        },
+        {
+            "id": 7,
+            "category": "Smart-soat",
+            "title": "Apple Watch Series 9",
+            "price": 3900000,
+            "price_month": {
+                "9": 530000,
+                "12": 420000,
+                "18": 295000,
+                "24": 230000
+            },
+            "description": "Apple Watch Series 9 yanada tezkor protsessor, to‘g‘ri sog‘liq monitoringi, uyqu nazorati va sport faoliyatini kuzatish imkoniyatlari bilan jihozlangan. Retina displey yorqin, bateriya esa uzoq davom etadi. Siri bilan offline ishlash qo‘llab — kundalik hayotda juda qulay.",
+            "rating": 4.9
+        },
+        {
+            "id": 8,
+            "category": "Konditsioner",
+            "title": "Artel Everest 12 Air Conditioner",
+            "price": 3600000,
+            "price_month": {
+                "9": 500000,
+                "12": 400000,
+                "18": 280000,
+                "24": 220000
+            },
+            "description": "Artel Everest 12 xonani tez sovutadi va isitish funksiyasiga ham ega. Inverter texnologiyasi energiya sarfini kamaytiradi. Turli rejimlar, tungi rejim va xavfsizlik tizimi mavjud. Konditsioner uzoq muddat ishlash uchun mos mustahkam kompressor bilan ta’minlangan.",
+            "rating": 4.6
+        },
+        {
+            "id": 9,
+            "category": "Noutbuk",
+            "title": "MacBook Air M2 256GB",
+            "price": 11500000,
+            "price_month": {
+                "9": 1550000,
+                "12": 1250000,
+                "18": 880000,
+                "24": 700000
+            },
+            "description": "MacBook Air M2 — eng yengil va kuchli ultrabuklardan biri. M2 chipi yordamida dasturlash, dizayn, ofis ishlari va videomontajni bemalol bajaradi. 18 soatlik avtonomlik, ajoyib Retina displey va premium korpus uni professional va o‘quvchilar uchun ideal qiladi.",
+            "rating": 4.9
+        },
+        {
+            "id": 10,
+            "category": "Televizor",
+            "title": "Artel 43\" Full HD Smart TV",
+            "price": 2500000,
+            "price_month": {
+                "9": 345000,
+                "12": 280000,
+                "18": 200000,
+                "24": 160000
+            },
+            "description": "Artel 43\" Full HD televizori arzon narxda yuqori sifat taklif qiladi. YouTube va boshqa ilovalar ishlaydigan Smart TV tizimi mavjud. Ranglar tabiiy, ovoz esa kuchli va toza. Oila bilan film ko‘rish, yangiliklar kuzatish yoki o‘yin konsollari uchun juda mos.",
+            "rating": 4.4
+        }
+    ],r
+    "users": [
+        {
+            "firstName": "Saidazim",
+            "lastName": "Buriboyev",
+            "_login": "pokemon123",
+            "_password": "pokemon123"
+        },
+        {
+            "firstName": "Vorisjon",
+            "lastName": "Boboyev",
+            "_login": "oris123",
+            "_password": "oris123"
+        }
+    ]
+}
