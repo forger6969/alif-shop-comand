@@ -140,7 +140,7 @@
             "description": "Artel 43\" Full HD televizori arzon narxda yuqori sifat taklif qiladi. YouTube va boshqa ilovalar ishlaydigan Smart TV tizimi mavjud. Ranglar tabiiy, ovoz esa kuchli va toza. Oila bilan film ko‘rish, yangiliklar kuzatish yoki o‘yin konsollari uchun juda mos.",
             "rating": 4.4
         }
-    ],r
+    ],
     "users": [
         {
             "firstName": "Saidazim",
@@ -153,6 +153,12 @@
             "lastName": "Boboyev",
             "_login": "oris123",
             "_password": "oris123"
+        },
+        {
+            "firstName": "Odiljon",
+            "lastName": "Xamidullayev",
+            "_login": "odil47",
+            "_password": "xob26"
         }
     ]
 }

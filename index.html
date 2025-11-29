@@ -5,11 +5,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
+    <title>Alif shop</title>
 </head>
 
+<body class="">
+    <header>
+        <div class="container max-w-[100%] w-[80%] mx-auto">
+            <div class="header-wrapper pt-[8px]">
+                <div class="header-timer flex justify-between">
+                    <p
+                        class="w-[350px] bg-red-500 text-[30px] text-center p-[5px] rounded-[50px]  font-bold text-white ">
+                        Aksiya boshlanishiga
+                    </p>
 
-<body>
+                    <div id="timer"
+                        class="w-[350px] text-[15px] bg-red-500 text-center p-[3px] rounded-[50px]  text-white flex justify-center gap-4">
+                        <span><span class="font-medium text-[17px] " id="d">0</span><br><small
+                                class="text-[15px] font-serif">kun</small></span>
+                        <span><span class="font-medium text-[17px] " id="h">0</span><br><small
+                                class="text-[15px] font-serif">soat</small></span>
+                        <span><span class="font-medium text-[17px] " id="m">0</span><br><small
+                                class="text-[15px] font-serif">daqiqа</small></span>
+                        <span><span class="font-medium text-[17px] " id="s">0</span><br><small
+                                class="text-[15px] font-serif">soniya</small></span>
+                    </div>
+
+                    <img width="300px" src="./imgs/Screenshot 2025-11-28 171813.png" alt="">
+                </div>
+            </div>
+            <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center">
+                <img width="113" src="./imgs/Container.png" alt="">
+                <form class="formelm flex justify-between gap-8" action="">
+                    <button type="button" id="openCatalog" class="flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px]">
+                        <img class="pt-[2px]" width="22" src="./imgs/burger.png" alt="">
+                        Tovarlar katalogi
+                    </button>
+                    <div
+                        class="input-box  flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
+                        <input placeholder="Yourprods" class="h-[48px]  p-[12px] outline-none focus:outline-none"
+                            type="text">
+
+                        <button class="bg-[#FFBE1F] w-15 flex items-center justify-center">
+                            <img height="100%" src="./imgs/Component 2.png" alt="">
+                        </button>
+                    </div>
+                </form>
+
+                <div class="">
+                    <nav class="flex items-center gap-8">
+                        <!-- left: icons -->
+                        <div class="flex items-center gap-6">
+                            <!-- Savat -->
+                            <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
+                                <!-- cart icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                        d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
+                                </svg>
+                                <span class="text-xs">Savat</span>
+                            </a>
+
+                            <!-- Aviachtiptalar with red badge -->
+                            <a href="#"
+                                class="relative flex flex-col items-center text-center text-sm hover:text-black">
+                                <!-- plane icon -->
+                                <div class="relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                            d="M10.5 6L3 9l4 2 4 10 1-7 7-1-9-6z" />
+                                    </svg>
+
+                                    <!-- red circle badge -->
+                                    <div class="absolute -top-1 -right-3 icon-badge">
+                                        <div
+                                            class="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white text-[10px] leading-none font-semibold shadow">
+                                            0%
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="text-xs">Aviachiptalar</span>
+                            </a>
+
+                            <!-- Saralanganlar (heart) -->
+                            <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                        d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                                </svg>
+                                <span class="text-xs">Saralanganlar</span>
+                            </a>
+                        </div>
+
+                        <!-- center (optional empty) to mimic image spacing -->
+                        <div></div>
+
+                        <!-- right: Kirish button + language links -->
+                        <div class="flex items-center gap-4">
+                            <!-- Kirish button -->
+                            <a href="#"
+                                class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-yellow-200">
+                                Kirish
+                            </a>
+
+                            <div class="flex items-center gap-2 text-sm text-gray-400">
+                                <a href="#" class="hover:text-gray-600">RUS</a>
+                                <span class="text-gray-300">/</span>
+                                <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="catalogModal" class="fixed inset-0 hidden items-start justify-center z-50">
+        <div class="bg-white w-[100%] mt-35 rounded-xl p-8 relative">
+            <button id="closeCatalog" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">
+                ✕
+            </button>
+            <div class="grid grid-cols-4 gap-8">
+                <div class="space-y-3 font-medium  justify-items-center">
+                    <p class="text-yellow-500">Smartfonlar va gadjetlar</p>
+                    <p>Kompyuterlar</p>
+                    <p>TV va proektorlar</p>
+                    <p>Audiotexnika</p>
+                    <p>Transport</p>
+                    <p>Uy uchun texnika</p>
+                    <p>Oshxona uchun texnika</p>
+                    <p>Go‘zallik</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Smartfonlar va telefonlar</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Apple</li>
+                        <li>Samsung</li>
+                        <li>Xiaomi</li>
+                        <li>Honor</li>
+                        <li>Vivo</li>
+                    </ul>
+
+                    <h3 class="font-semibold mt-6 mb-3">Gadjetlar</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>VR ko‘zoynaklar</li>
+                        <li>Powerbanklar</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Aksesuarlar</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>G‘iloflar</li>
+                        <li>Plenka va steklo</li>
+                        <li>Quvvatlagichlar</li>
+                        <li>Kabellar</li>
+                    </ul>
+
+                    <h3 class="font-semibold mt-6 mb-3">Tegishli tovarlar</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Batareya</li>
+                        <li>Akkumulyator</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-3">Soat va aksessuarlar</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Aqlli soatlar</li>
+                        <li>Fitnes brasletlar</li>
+                        <li>Soat kamarlari</li>
+                    </ul>
+                    <h3 class="font-semibold mt-6 mb-3">Foto va video</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Kameralar</li>
+                        <li>Fotoapparatlar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
