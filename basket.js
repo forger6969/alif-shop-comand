@@ -10,4 +10,5 @@ let count = 0;
             count--;
         }
         document.getElementById("count").textContent = count;
+        
     }
