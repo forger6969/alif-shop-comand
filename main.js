@@ -1,6 +1,6 @@
 let finc = async () => {
     try {
-      const res = await fetch('http://localhost:3001/products');
+      const res = await fetch('http://localhost:3001/product');
       const data = await res.json();
       console.log(data);
   
