@@ -30,7 +30,7 @@ function render(data) {
         В корзину
       </button>
     `;
-    card_wrapper.append(card);
+        card_wrapper.append(card);
     })
 
 }
@@ -84,51 +84,60 @@ cards.forEach((card) => {
     card.addEventListener("click", () => {
         let pTegi = card.querySelector('.kategory-name')
         let atributeValue = card.getAttribute('value')
-        
-        
+
+
         let valuee = pTegi.innerText;
         localStorage.setItem("vaelue", valuee)
         localStorage.setItem("atributeVelyu", atributeValue)
         console.log(pTegi);
-        
-        
 
 
-        
+
+
+
         let cardd = card.getAttribute('value');
         console.log(cardd);
         window.location.href = 'render_catalog.html';
-        
-        
-        
+
+
+
     })
-    
+
 })
 
 // katalog boyicha filterlash funksiyasi
 
 function filtersCards(data) {
 
-        let atributeValue = localStorage.getItem('atributeVelyu')
-        console.log(atributeValue);
-        
-
-        let catolgi = catalogMap[atributeValue];
-        let filterCard = data.filter((e) => e.category == catolgi)
-        render(filterCard)
-        console.log(catolgi);
-        
-        
+    let atributeValue = localStorage.getItem('atributeVelyu')
+    console.log(atributeValue);
 
 
-        
-        
-        
-        
-        
-    
+    let catolgi = catalogMap[atributeValue];
+    let filterCard = data.filter((e) => e.category == catolgi)
+    render(filterCard)
+    console.log(catolgi);
 
-    }
+
+
+
+
+
+
+
+
+
+
+}
+
+function imgTelefons() {
+    window.location.href = 'render_catalog.html';
+
+    let filterCard = data.filter((e) => e.category == "technology")
+    render(filterCard)
+
+
+}
 
 
 // catalog nomi chiqadigan funksiya
