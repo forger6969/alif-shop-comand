@@ -1443,19 +1443,8 @@
             "lastName": "Boboyev",
             "_login": "oris123",
             "_password": "oris123"
-        },
-        {
-            "firstName": "Odiljon",
-            "lastName": "Xamidullayev",
-            "_login": "odil47",
-            "_password": "xob26"
-        },
-            {"firstName": "Muhammadamin",
-            "lastName": "Usmanov",
-            "_login": "Usmanov001100",
-            "_password": "usmv001100"
         }
-        
+    
     ],
     "products": [
     {

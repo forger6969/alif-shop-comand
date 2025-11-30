@@ -2,31 +2,135 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Alif shop</title>
 </head>
 
-<body>
-    <main>
-
-<<<<<<< HEAD
-        
+<body class="max-w-full w-[85%] mx-auto">
 
 
 
 
+  <header>
+    <div class="container ">
+      <div class="header-wrapper pt-[8px]">
+        <div class="header-timer flex justify-between">
+          <p class="w-[350px] bg-red-500 text-[30px] text-center p-[5px] rounded-[50px]  font-bold text-white ">
+            Aksiya boshlanishiga
+          </p>
 
-        <a href="katalog_xob.html"><button>Katalogga otish</button></a>
-    </main>
-    <div class="w-full px-4">
-=======
+          <div id="timer"
+            class="w-[350px] text-[15px] bg-red-500 text-center p-[3px] rounded-[50px]  text-white flex justify-center gap-4">
+            <span><span class="font-medium text-[17px] " id="d">0</span><br><small
+                class="text-[15px] font-serif">kun</small></span>
+            <span><span class="font-medium text-[17px] " id="h">0</span><br><small
+                class="text-[15px] font-serif">soat</small></span>
+            <span><span class="font-medium text-[17px] " id="m">0</span><br><small
+                class="text-[15px] font-serif">daqiqа</small></span>
+            <span><span class="font-medium text-[17px] " id="s">0</span><br><small
+                class="text-[15px] font-serif">soniya</small></span>
+          </div>
 
->>>>>>> 0a01e3ecdc881fc356f89305ad842859f5fd4cc6
-  <!-- Wrapper -->
-  <div class="container w-[95%] max-w-[100%] mx-auto">
-    <!-- <div class="flex wrapper gap-[20px] flex-wrap justify-between">
+          <img width="300px" src="./imgs/Screenshot 2025-11-28 171813.png" alt="">
+        </div>
+      </div>
+      <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center">
+        <img width="113" src="./imgs/Container.png" alt="">
+        <form class="formelm flex justify-between gap-8" action="">
+          <button class=" flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px]">
+            <img class="pt-[2px]" width="22" src="./imgs/burger.png" alt="">
+            Tovarlar katalogi
+          </button>
+          <div
+            class="input-box  flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
+            <input placeholder="Yourprods" class="h-[48px]  p-[12px] outline-none focus:outline-none" type="text">
+
+            <button class="bg-[#FFBE1F] w-15 flex items-center justify-center">
+              <img height="100%" src="./imgs/Component 2.png" alt="">
+            </button>
+          </div>
+        </form>
+
+        <div class="">
+          <nav class="flex items-center gap-8">
+            <!-- left: icons -->
+            <div class="flex items-center gap-6">
+              <!-- Savat -->
+              <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
+                <!-- cart icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                    d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
+                </svg>
+                <span class="text-xs">Savat</span>
+              </a>
+
+              <!-- Aviachtiptalar with red badge -->
+              <a href="#" class="relative flex flex-col items-center text-center text-sm hover:text-black">
+                <!-- plane icon -->
+                <div class="relative">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                      d="M10.5 6L3 9l4 2 4 10 1-7 7-1-9-6z" />
+                  </svg>
+
+                  <!-- red circle badge -->
+                  <div class="absolute -top-1 -right-3 icon-badge">
+                    <div
+                      class="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white text-[10px] leading-none font-semibold shadow">
+                      0%
+                    </div>
+                  </div>
+                </div>
+                <span class="text-xs">Aviachiptalar</span>
+              </a>
+
+              <!-- Saralanganlar (heart) -->
+              <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                </svg>
+                <span class="text-xs">Saralanganlar</span>
+              </a>
+            </div>
+
+            <!-- center (optional empty) to mimic image spacing -->
+            <div></div>
+
+            <!-- right: Kirish button + language links -->
+            <div class="flex items-center gap-4">
+              <!-- Kirish button -->
+              <a href="#"
+                class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-yellow-200">
+                Kirish
+              </a>
+
+              <div class="flex items-center gap-2 text-sm text-gray-400">
+                <a href="#" class="hover:text-gray-600">RUS</a>
+                <span class="text-gray-300">/</span>
+                <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <div class="w-full px-4">
+
+    <!-- Wrapper -->
+    <div class="container w-[95%] max-w-[100%] mx-auto">
+      <!-- <div class="flex wrapper gap-[20px] flex-wrap justify-between">
 
     
     <div class="w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col">
@@ -56,38 +160,50 @@
       </button>
     </div>
 
-    
 
     
 
   </div> -->
 
-<h1 class="w-[50%] text-[50px] ">Часы</h1>
-<div class="flex watches  flex-wrap justify-between"></div>
+      <h1 class="w-[50%] text-[50px] ">Часы</h1>
+      <div class="flex watches  flex-wrap justify-between"></div>
 
-<h1 class="w-[50%] text-[50px] ">Електронные технологии</h1>
-<div class="flex tech  flex-wrap justify-between"></div>
+      <h1 class="w-[50%] text-[50px] ">Електронные технологии</h1>
+      <div class="flex tech  flex-wrap justify-between"></div>
 
-  <h1 class="w-[50%] text-[50px] ">Одежда</h1>
-<div class="flex clothes  flex-wrap justify-between"></div>
-
-
-    <h1 class="w-[50%] text-[50px] ">Парфюмерия</h1>
-<div class="flex parfiums  flex-wrap justify-between"></div>
-
-    <h1 class="w-[50%] text-[50px] ">Автотовары</h1>
-<div class="flex cars  flex-wrap justify-between"></div>
-
-    <h1 class="w-[50%] text-[50px] ">Полный комплект для нового дома</h1>
-<div class="flex home  flex-wrap justify-between"></div>
-
-  <h1 class="w-[50%] text-[50px] ">Товары для чистого дома</h1>
-<div class="flex cleaners  flex-wrap justify-between"></div>
-
-  </div>
+      <h1 class="w-[50%] text-[50px] ">Одежда</h1>
+      <div class="flex clothes  flex-wrap justify-between"></div>
 
 
+      <h1 class="w-[50%] text-[50px] ">Парфюмерия</h1>
+      <div class="flex parfiums  flex-wrap justify-between"></div>
+
+      <h1 class="w-[50%] text-[50px] ">Автотовары</h1>
+      <div class="flex cars  flex-wrap justify-between"></div>
+
+      <h1 class="w-[50%] text-[50px] ">Полный комплект для нового дома</h1>
+      <div class="flex home  flex-wrap justify-between"></div>
+
+      <h1 class="w-[50%] text-[50px] ">Товары для чистого дома</h1>
+      <div class="flex cleaners  flex-wrap justify-between"></div>
+
+    </div>
+
+    <button class="m-[50px] p-[20px] bg-[#ffbe1f] flex gap-[20px] px-[100px] text-[20px] font-[800] items-center justify-center rounded-[20px] mx-auto hover:opacity-70 duration-300 ease-out" onclick="katalos()"><svg width="20" height="20" viewBox="0 0 20 20"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_12922_4050)">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M2.66675 0.666656C1.56218 0.666656 0.666748 1.56208 0.666748 2.66666V7.33332C0.666748 8.43789 1.56218 9.33332 2.66675 9.33332H7.33341C8.43798 9.33332 9.33341 8.43789 9.33341 7.33332V2.66666C9.33341 1.56209 8.43799 0.666656 7.33342 0.666656H2.66675ZM2.66675 2.66666L7.33342 2.66666L7.33341 7.33332L2.66675 7.33332V2.66666ZM12.6667 0.666656C11.5622 0.666656 10.6667 1.56208 10.6667 2.66666V7.33332C10.6667 8.43789 11.5622 9.33332 12.6667 9.33332H17.3334C18.438 9.33332 19.3334 8.43789 19.3334 7.33332V2.66666C19.3334 1.56209 18.438 0.666656 17.3334 0.666656H12.6667ZM12.6667 2.66666L17.3334 2.66666L17.3334 7.33332L12.6667 7.33332V2.66666ZM0.666748 12.6667C0.666748 11.5621 1.56218 10.6667 2.66675 10.6667H7.33342C8.43799 10.6667 9.33341 11.5621 9.33341 12.6667V17.3333C9.33341 18.4379 8.43798 19.3333 7.33341 19.3333H2.66675C1.56218 19.3333 0.666748 18.4379 0.666748 17.3333V12.6667ZM7.33342 12.6667H2.66675V17.3333L7.33341 17.3333L7.33342 12.6667ZM12.6667 10.6667C11.5622 10.6667 10.6667 11.5621 10.6667 12.6667V17.3333C10.6667 18.4379 11.5622 19.3333 12.6667 19.3333H17.3334C18.438 19.3333 19.3334 18.4379 19.3334 17.3333V12.6667C19.3334 11.5621 18.438 10.6667 17.3334 10.6667H12.6667ZM12.6667 12.6667H17.3334L17.3334 17.3333L12.6667 17.3333V12.6667Z"
+            fill="#24272C"></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_12922_4050">
+            <rect width="20" height="20" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg> Kotalogga o'tish</button>
     <script src="./main.js"></script>
 </body>
+
 
 </html>
