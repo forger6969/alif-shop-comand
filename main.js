@@ -19,12 +19,9 @@ let finc = async () => {
       categories[item.category].push(item);
     });
 
-    console.log(categories);
 
 
-
-    let random = Math.round(data.id)
-    console.log(random , 'mana');
+    
     
     
     let tech = document.querySelector('.tech');
@@ -45,66 +42,66 @@ let finc = async () => {
 
     let watchesss = document.querySelector('.watches');
     let watches = categories.watches
-    console.log(watches);
 
     watches.forEach(watch => {
         let card = document.createElement('div');
           card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
           card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+         <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton  bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold " data-id="${watch.id}">
         В корзину
       </button>
           `;
           watchesss.append(card);
-    })
+          console.log(watch.id)
+    });
 
      techn.forEach(watch => {
         let card = document.createElement('div');
           card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
           card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+         <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
@@ -118,28 +115,28 @@ let finc = async () => {
         let card = document.createElement('div');
           card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
           card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+          <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
@@ -152,28 +149,28 @@ let finc = async () => {
         let card = document.createElement('div');
           card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
           card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+          <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
@@ -184,28 +181,28 @@ let finc = async () => {
         let card = document.createElement('div');
           card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
           card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+         <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
@@ -216,28 +213,28 @@ let finc = async () => {
         let card = document.createElement('div');
           card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
           card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+          <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
@@ -248,28 +245,28 @@ let finc = async () => {
         let card = document.createElement('div');
           card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
           card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+       <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
@@ -278,41 +275,74 @@ let finc = async () => {
   
 
 
-    // function  sortAll(data) {
-    //   let selectorrr = document.querySelector('.btn.all');
-    
-    //   selectorrr.addEventListener('change', () => {
-    //     let selectValue = selectorrr.value;
-    //     let newArr = [];
 
-    //     if (selectValue === 'all') {
-    //       newArr = data;
-  
-  
-  
-    //     } else {
-    //       newArr = data.filter(item =>
-    //         item.category &&
-    //         item.category.toLowerCase().includes(selectValue.toLowerCase())
-    //       );
-    //     }
-    
-    //      renderdom(newArr);
-    //   });
-    // }
-  
-  
-    //   renderdom(data);
-  
-  
-  
-    // sortAll(data);
+   document.querySelectorAll('.buttton').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = e.target.dataset.id;
+      console.log(id);
 
 
+      addIdToLocalStorage(id);
 
+    console.log("Saved IDs now:", JSON.parse(localStorage.getItem("savedIds")));
 
+    });
+  });
+
+function addIdToLocalStorage(id) {
+  let ids = JSON.parse(localStorage.getItem("savedIds")) || [];
+
+  ids.push(id);
+  localStorage.setItem("savedIds", JSON.stringify(ids));
+}
 
   
+
+
+document.addEventListener("click", (e) => {
+
+  const heartBtn = e.target.closest(".heart-btn");
+  if (!heartBtn) return;
+
+  const id = heartBtn.dataset.id;
+  console.log("Heart clicked:", id);
+
+  toggleFavorite(id);
+  updateHeartStyles();
+});
+
+
+function toggleFavorite(id) {
+  let favorites = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(item => item !== id);
+  } else {
+    favorites.push(id);
+  }
+
+  localStorage.setItem("favoriteIds", JSON.stringify(favorites));
+}
+
+function updateHeartStyles() {
+  const favorites = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+
+  document.querySelectorAll(".heart-btn").forEach(btn => {
+    const svg = btn.querySelector(".heart-icon");
+
+    if (favorites.includes(btn.dataset.id)) {
+      svg.classList.add("fill-red-500", "stroke-red-500");
+    } else {
+      svg.classList.remove("fill-red-500", "stroke-red-500");
+    }
+  });
+}
+
+updateHeartStyles();
+
+
+
+
     } catch (e) {
       console.error(e);
     } finally {
@@ -321,4 +351,3 @@ let finc = async () => {
   }
   
   finc();
-  
