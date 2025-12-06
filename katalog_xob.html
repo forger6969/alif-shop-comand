@@ -10,120 +10,143 @@
 
 </head>
 
-<body>
-    <header class="max-w-full w-[85%] mx-auto">
-    <div class="container ">
-      <div class="header-wrapper pt-[8px]">
-        <div class="header-timer flex justify-between">
-          <p class="w-[350px] bg-red-500 text-[30px] text-center p-[5px] rounded-[50px]  font-bold text-white ">
-            Aksiya boshlanishiga
-          </p>
+<body class="">
+    <div class="dearch_div hidden">
+        <header>
+            <form class="max-w-[100%] w-[85%] m-auto relative" action="">
+                <label class="w-[100%] relative" for="">
+                    <input
+                        class="SearchChange p-[10px] font-[600]  border-b-[2px] w-[100%] h-[80px] outline-none text-[26px]"
+                        placeholder="Search..." type="text">
+                    <img onclick="closee()" class="absolute top-[-10px] w-[43px] h-[40px] right-3 duration-300 ease-in"
+                        src="xobImage/close.png" alt="img">
+                </label>
+            </form>
 
-          <div id="timer"
-            class="w-[350px] text-[15px] bg-red-500 text-center p-[3px] rounded-[50px]  text-white flex justify-center gap-4">
-            <span><span class="font-medium text-[17px] " id="d">0</span><br><small
-                class="text-[15px] font-serif">kun</small></span>
-            <span><span class="font-medium text-[17px] " id="h">0</span><br><small
-                class="text-[15px] font-serif">soat</small></span>
-            <span><span class="font-medium text-[17px] " id="m">0</span><br><small
-                class="text-[15px] font-serif">daqiqа</small></span>
-            <span><span class="font-medium text-[17px] " id="s">0</span><br><small
-                class="text-[15px] font-serif">soniya</small></span>
-          </div>
+            <div class="card_wrappers mt-[100px] flex flex-wrap justify-center gap-[30px]">
 
-          <img width="300px" src="./imgs/Screenshot 2025-11-28 171813.png" alt="">
-        </div>
-      </div>
-      <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center">
-        <a href="index.html"><img width="113" src="./imgs/Container.png" alt=""></a>
-        <form class="formelm flex justify-between gap-8" action="">
-          <button class=" flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px]">
-            <img class="pt-[2px]" width="22" src="./imgs/burger.png" alt="">
-            Tovarlar katalogi
-          </button>
-          <div
-            class="input-box  flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
-            <input placeholder="Yourprods" class="h-[48px]  p-[12px] outline-none focus:outline-none" type="text">
-
-            <button class="bg-[#FFBE1F] w-15 flex items-center justify-center">
-              <img height="100%" src="./imgs/Component 2.png" alt="">
-            </button>
-          </div>
-        </form>
-
-        <div class="">
-          <nav class="flex items-center gap-8">
-            <!-- left: icons -->
-            <div class="flex items-center gap-6">
-              <!-- Savat -->
-              <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
-                <!-- cart icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                    d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
-                </svg>
-                <span class="text-xs">Savat</span>
-              </a>
-
-              <!-- Aviachtiptalar with red badge -->
-              <a href="#" class="relative flex flex-col items-center text-center text-sm hover:text-black">
-                <!-- plane icon -->
-                <div class="relative">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                      d="M10.5 6L3 9l4 2 4 10 1-7 7-1-9-6z" />
-                  </svg>
-
-                  <!-- red circle badge -->
-                  <div class="absolute -top-1 -right-3 icon-badge">
-                    <div
-                      class="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white text-[10px] leading-none font-semibold shadow">
-                      0%
-                    </div>
-                  </div>
-                </div>
-                <span class="text-xs">Aviachiptalar</span>
-              </a>
-
-              <!-- Saralanganlar (heart) -->
-              <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
-                </svg>
-                <span class="text-xs">Saralanganlar</span>
-              </a>
             </div>
-
-            <!-- center (optional empty) to mimic image spacing -->
-            <div></div>
-
-            <!-- right: Kirish button + language links -->
-            <div class="flex items-center gap-4">
-              <!-- Kirish button -->
-              <a href="#"
-                class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-yellow-200">
-                Kirish
-              </a>
-
-              <div class="flex items-center gap-2 text-sm text-gray-400">
-                <a href="#" class="hover:text-gray-600">RUS</a>
-                <span class="text-gray-300">/</span>
-                <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
+        </header>
     </div>
-  </header>
-    <main>
-        <div class="container max-w-full w-[80%] mx-auto gap-[30px]">
-            <p class="katalog-text text-5xl font-[700] mb-12">Katalog</p>
-            <div class="card-wrapper flex justify-start flex-wrap ">
+
+    <div class="searchInput">
+        <header>
+            <div class="container ">
+                <div class="header-wrapper pt-[8px]">
+                    <div class="header-timer flex justify-between">
+                        <p
+                            class="w-[350px] bg-red-500 text-[30px] text-center p-[5px] rounded-[50px]  font-bold text-white ">
+                            Aksiya boshlanishiga
+                        </p>
+
+                        <div id="timer"
+                            class="w-[350px] text-[15px] bg-red-500 text-center p-[3px] rounded-[50px]  text-white flex justify-center gap-4">
+                            <span><span class="font-medium text-[17px] " id="d">0</span><br><small
+                                    class="text-[15px] font-serif">kun</small></span>
+                            <span><span class="font-medium text-[17px] " id="h">0</span><br><small
+                                    class="text-[15px] font-serif">soat</small></span>
+                            <span><span class="font-medium text-[17px] " id="m">0</span><br><small
+                                    class="text-[15px] font-serif">daqiqа</small></span>
+                            <span><span class="font-medium text-[17px] " id="s">0</span><br><small
+                                    class="text-[15px] font-serif">soniya</small></span>
+                        </div>
+
+                        <img width="300px" src="./imgs/Screenshot 2025-11-28 171813.png" alt="">
+                    </div>
+                </div>
+                <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center">
+                    <a href="index.html"><img width="113" src="./imgs/Container.png" alt=""></a>
+                    <form class="formelm flex justify-between gap-8" action="">
+                        <button type="button" id="openCatalog"
+                            class=" flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px]">
+                            <img class="pt-[2px]" width="22" src="./imgs/burger.png" alt="">
+                            Tovarlar katalogi
+                        </button>
+                        <div
+                            class="input-box  flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
+                            <input placeholder="Yourprods" id="header_input"
+                                class="h-[48px]  p-[12px] outline-none focus:outline-none" type="text">
+
+                            <button class="bg-[#FFBE1F] w-15 flex items-center justify-center">
+                                <img height="100%" src="./imgs/Component 2.png" alt="">
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="">
+                        <nav class="flex items-center gap-8">
+                            <!-- left: icons -->
+                            <div class="flex items-center gap-6">
+                                <!-- Savat -->
+                                <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
+                                    <!-- cart icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                            d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
+                                    </svg>
+                                    <span class="text-xs">Savat</span>
+                                </a>
+
+                                <!-- Aviachtiptalar with red badge -->
+                                <a href="#"
+                                    class="relative flex flex-col items-center text-center text-sm hover:text-black">
+                                    <!-- plane icon -->
+                                    <div class="relative">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                                d="M10.5 6L3 9l4 2 4 10 1-7 7-1-9-6z" />
+                                        </svg>
+
+                                        <!-- red circle badge -->
+                                        <div class="absolute -top-1 -right-3 icon-badge">
+                                            <div
+                                                class="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white text-[10px] leading-none font-semibold shadow">
+                                                0%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs">Aviachiptalar</span>
+                                </a>
+
+                                <!-- Saralanganlar (heart) -->
+                                <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                            d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                                    </svg>
+                                    <span class="text-xs">Saralanganlar</span>
+                                </a>
+                            </div>
+
+                            <!-- center (optional empty) to mimic image spacing -->
+                            <div></div>
+
+                            <!-- right: Kirish button + language links -->
+                            <div class="flex items-center gap-4">
+                                <!-- Kirish button -->
+                                <a href="#"
+                                    class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-yellow-200">
+                                    Kirish
+                                </a>
+
+                                <div class="flex items-center gap-2 text-sm text-gray-400">
+                                    <a href="#" class="hover:text-gray-600">RUS</a>
+                                    <span class="text-gray-300">/</span>
+                                    <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container max-w-full w-[80%] mx-auto gap-[30px]">
+                <p class="katalog-text text-5xl font-[700] mb-12">Katalog</p>
+                <div class="card-wrapper flex justify-start flex-wrap ">
                     <div value="smartfonlar" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
                         <img class="w-[150px] mx-auto  "
                             src="https://s3.fortifai.uz/shop/catalog/category/smartfoni-i-gadzheti/1714023991-no%20text%20-%2006.png"
@@ -131,142 +154,250 @@
                         <p class="kategory-name mx-auto  text-[20px]  font-medium mb-[10px] text-[#000000]">Smartfonlar
                             va gadjetlar</p>
                         <p class="category-about text-[20px] font-medium text-[#0000009d]">Smartfonlar va telefonlar,
-                            <br> Gadjetlar, <br> Smartfonlar uchun aksessuarlar,</p>
+                            <br> Gadjetlar, <br> Smartfonlar uchun aksessuarlar,
+                        </p>
                     </div>
 
-                <div value="pc" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024006-no text - 08.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Noutbuklar, kompyuterlar
-                    </p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Noutbuklar, <br> Kompyuterlar va
-                        Monitorlar, <br> Tarmoq uskunalari,</p>
+                    <div value="pc" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024006-no text - 08.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Noutbuklar,
+                            kompyuterlar
+                        </p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Noutbuklar, <br> Kompyuterlar
+                            va
+                            Monitorlar, <br> Tarmoq uskunalari,</p>
+                    </div>
+
+                    <div value="tv" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024017-no text - 05.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">TV va proektorlar</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Televizorlar va proyektorlar,
+                            <br> Gadjetlar, <br> Smartfonlar uchun aksessuarlar,
+                        </p>
+                    </div>
+
+                    <div value="audio" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1716206035-IMG_2899.JPG" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Audiotexnikalar</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Portativ audio, <br> Uy
+                            audiosi
+                            va DJ, <br> Eshitish vositasi,</p>
+                    </div>
+
+                    <div value="transport" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024052-no text - 02.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Transport</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Avtomobilar, <br>Boshqa
+                            transport
+                            vositalari,</p>
+                    </div>
+
+                    <div value="forHome" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024041-no text - 01.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Uy uchun texnika</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Kiyim va poyabzal
+                            parvarishi,<br>
+                            Quritgich va kir yuvish mashinalari, <br> Uy asboblari,</p>
+                    </div>
+
+                    <div value="oshxona" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024064-no text - 14.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Oshxona uchun texnika
+                        </p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Ovqat tayyorlanishi, <br>
+                            Katta
+                            hajmdagi oshxona texnikasi, <br> Mayda hajmdagi oshxona texnikasi,</p>
+                    </div>
+
+                    <div value="gozallik" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024077-no text - 04.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Go‘zallik va
+                            parvarish
+                        </p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Tana parvarishi, <br> pardoz
+                            vositalari, <br> Oziq-ovqat qo‘shimchalari,</p>
+                    </div>
+
+                    <div value="aqilliUy" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024088-no text - 09.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Aqlli uy</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Aqlli uy bilan ishlash,</p>
+                    </div>
+
+                    <div value="play" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024101-no text - 10.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">O'yin uchun texnika
+                        </p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Sony Playstation, <br> O’yin
+                            aksessuarlari,</p>
+                    </div>
+
+                    <div value="sport" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024111-no text - 11.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Sport tovarlari</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Simulyatorlar, <br>Sport
+                            oziq-ovqat, <br> Boks va yakka kurash,</p>
+                    </div>
+
+                    <div value="avtotovarlar" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024136-no text - 13.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Avtotovarlar</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Avtokimyo va moylar, <br>
+                            Avtoelektronika va avtoakustika, <br> Sirtqi va ichki salon aksessuarlari,</p>
+                    </div>
+
+                    <div value="bolalar" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024249-no text - 07.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Bolalar buyumlari</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Bolalar mebeli, <br> Yangi
+                            tug'ilgan chaqaloqlar uchun kiyimlar, <br> Tagliklar va gigiyena,</p>
+                    </div>
+
+                    <div value="qurilish" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1721801218-photo_2024-06-14_17-47-38-removebg-preview.png"
+                            alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Qurilish va
+                            ta'mirlash
+                        </p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Uy uchun uskunalar, <br>
+                            Generatorlar, <br> O'lchov hisoblagichlari ,</p>
+                    </div>
+
+                    <div value="uyUchun" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1714024123-no text - 12.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Uy uchun tovarlar</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Mebel, <br> Oshxona
+                            buyumlari,
+                            <br> Toʻqimachilik,
+                        </p>
+                    </div>
+
+                    <div value="uyVaBog" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1750330315-Groceries (1).png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Uy va bog‘</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Bog ' uskunalari va
+                            jihozlari,
+                            <br> Садовая мебель,
+                        </p>
+                    </div>
+
+                    <div value="ovqat" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1757396176-img.png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Oziq-ovqat
+                            mahsulotlari
+                        </p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Sog'lom ovqatlanish, <br> Un,
+                            shakar va tuz, <br> Yog'lar, souslar va ziravorlar,</p>
+                    </div>
+
+                    <div value="kanselyariya" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1760086546-Image (34).png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Kanselyariya</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Savdo uchun uskunalar,</p>
+                    </div>
+
+                    <div value="kimyo" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
+                        <img class="w-[150px] " src="xobImage/1760086546-Image (34).png" alt="img">
+                        <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Бытовая химия</p>
+                        <p class="category-about text-[20px] font-medium text-[#0000009d]">Стирка и глажение, <br>
+                            Чистящие
+                            и моющие средства,</p>
+                    </div>
                 </div>
 
-                <div value="tv" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024017-no text - 05.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">TV va proektorlar</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Televizorlar va proyektorlar,
-                        <br> Gadjetlar, <br> Smartfonlar uchun aksessuarlar,</p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-[#1f2227] text-gray-300 pt-12 pb-6 px-6 md:px-16 mt-10">
+            <!-- asd -->
+            <!-- Top sections -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3 text-white">Hujjatlar</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Sotish uchun umumiy shartlar</a></li>
+                        <li><a href="#" class="hover:text-white">Nizom</a></li>
+                        <li><a href="#" class="hover:text-white">Guvohnoma</a></li>
+                    </ul>
                 </div>
 
-                <div value="audio" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1716206035-IMG_2899.JPG" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Audiotexnikalar</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Portativ audio, <br> Uy audiosi
-                        va DJ, <br> Eshitish vositasi,</p>
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3 text-white">Servis</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Namoz vaqti</a></li>
+                        <li><a href="#" class="hover:text-white">Muddatli to'lov islomda</a></li>
+                        <li><a href="#" class="hover:text-white">alif shopda soting!</a></li>
+                        <li><a href="#" class="hover:text-white">Qaytarish</a></li>
+                    </ul>
                 </div>
 
-                <div value="transport" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024052-no text - 02.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Transport</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Avtomobilar, <br>Boshqa transport
-                        vositalari,</p>
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3 text-white">Tovarlar katalogi</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Smartfonlar va telefonlar</a></li>
+                        <li><a href="#" class="hover:text-white">Gadjetlar</a></li>
+                        <li><a href="#" class="hover:text-white">Smartfonlar uchun aksessuarlar</a></li>
+                        <li><a href="#" class="hover:text-white">Tegishli tovarlar</a></li>
+                        <li><a href="#" class="hover:text-white">Soat va aksessuarlar</a></li>
+                    </ul>
                 </div>
 
-                <div value="forHome" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024041-no text - 01.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Uy uchun texnika</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Kiyim va poyabzal parvarishi,<br>
-                        Quritgich va kir yuvish mashinalari, <br> Uy asboblari,</p>
+                <div>
+                    <h3 class="font-semibold text-lg mb-3 text-white">Biz ijtimoiy axborot vositalarida</h3>
+
+                    <div class="flex items-center gap-3 mb-6">
+                        <a href="#" class="w-8 h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
+                                class="w-full" />
+                        </a>
+
+                        <a href="#" class="w-8 h-8">
+                            <img src="https://img.utdstc.com/icon/464/b87/464b877ea1b27638704973e0ac78a42c71a43d496cffda0c34332f1e4b948960:200"
+                                class="w-full" />
+                        </a>
+
+                        <a href="#" class="w-8 h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png"
+                                class="w-full" />
+                        </a>
+
+                        <a href="#" class="w-8 h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Odnoklassniki.svg/2059px-Odnoklassniki.svg.png"
+                                class="w-full" />
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="#" class="w-8 h-8">
+                            <img src="https://store-images.s-microsoft.com/image/apps.47495.13634052595610511.c45457c9-b4af-46b0-8e61-8d7c0aec3f56.a8b71481-8a43-465d-88d6-e63add92c112"
+                                class="w-full" />
+                        </a>
+                    </div>
+
+                    <h3 class="font-semibold text-lg mb-3 text-white">Axborot xizmati</h3>
+
+                    <div class="space-y-2 text-sm">
+                        <p class="hover:text-white cursor-pointer">@alifshop_uz</p>
+                        <p class="hover:text-white cursor-pointer">+998 555 12 12 12</p>
+                    </div>
                 </div>
 
-                <div value="oshxona" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024064-no text - 14.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Oshxona uchun texnika</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Ovqat tayyorlanishi, <br> Katta
-                        hajmdagi oshxona texnikasi, <br> Mayda hajmdagi oshxona texnikasi,</p>
-                </div>
-
-                <div value="gozallik" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024077-no text - 04.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Go‘zallik va parvarish
-                    </p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Tana parvarishi, <br> pardoz
-                        vositalari, <br> Oziq-ovqat qo‘shimchalari,</p>
-                </div>
-
-                <div value="aqilliUy" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024088-no text - 09.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Aqlli uy</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Aqlli uy bilan ishlash,</p>
-                </div>
-
-                <div value="play" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024101-no text - 10.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">O'yin uchun texnika</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Sony Playstation, <br> O’yin
-                        aksessuarlari,</p>
-                </div>
-
-                <div value="sport" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024111-no text - 11.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Sport tovarlari</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Simulyatorlar, <br>Sport
-                        oziq-ovqat, <br> Boks va yakka kurash,</p>
-                </div>
-
-                <div value="avtotovarlar" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024136-no text - 13.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Avtotovarlar</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Avtokimyo va moylar, <br>
-                        Avtoelektronika va avtoakustika, <br> Sirtqi va ichki salon aksessuarlari,</p>
-                </div>
-
-                <div value="bolalar" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024249-no text - 07.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Bolalar buyumlari</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Bolalar mebeli, <br> Yangi
-                        tug'ilgan chaqaloqlar uchun kiyimlar, <br> Tagliklar va gigiyena,</p>
-                </div>
-
-                <div value="qurilish" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1721801218-photo_2024-06-14_17-47-38-removebg-preview.png"
-                        alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Qurilish va ta'mirlash
-                    </p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Uy uchun uskunalar, <br>
-                        Generatorlar, <br> O'lchov hisoblagichlari ,</p>
-                </div>
-
-                <div value="uyUchun" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1714024123-no text - 12.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Uy uchun tovarlar</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Mebel, <br> Oshxona buyumlari,
-                        <br> Toʻqimachilik,</p>
-                </div>
-
-                <div value="uyVaBog" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1750330315-Groceries (1).png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Uy va bog‘</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Bog ' uskunalari va jihozlari,
-                        <br> Садовая мебель,</p>
-                </div>
-
-                <div value="ovqat" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1757396176-img.png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Oziq-ovqat mahsulotlari
-                    </p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Sog'lom ovqatlanish, <br> Un,
-                        shakar va tuz, <br> Yog'lar, souslar va ziravorlar,</p>
-                </div>
-
-                <div value="kanselyariya" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1760086546-Image (34).png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Kanselyariya</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Savdo uchun uskunalar,</p>
-                </div>
-
-                <div value="kimyo" class="card flex flex-col w-auto justify-center items-start px-5 py-6">
-                    <img class="w-[150px] " src="xobImage/1760086546-Image (34).png" alt="img">
-                    <p class="kategory-name text-[20px]  font-medium mb-[10px] text-[#000000]">Бытовая химия</p>
-                    <p class="category-about text-[20px] font-medium text-[#0000009d]">Стирка и глажение, <br> Чистящие
-                        и моющие средства,</p>
-                </div>
             </div>
 
-        </div>
-    </main>
-    <script src="katalog_xob.js"></script>
+            <hr class="border-gray-700 my-6">
+
+            <p class="text-sm text-gray-400">
+                2025 © alifshop.uz
+            </p>
+
+        </footer>
+    </div>
+        <script src="katalog_xob.js"></script>
+        <script src="main.js"></script>
 </body>
 
 </html>
