@@ -1430,23 +1430,22 @@
       "installment": 1325,
       "description": "Электронная книга с подсветкой"
     }
-],
-    "users": [
-        {
-            "firstName": "Saidazim",
-            "lastName": "Buriboyev",
-            "_login": "pokemon123",
-            "_password": "pokemon123"
-        },
-        {
-            "firstName": "Vorisjon",
-            "lastName": "Boboyev",
-            "_login": "oris123",
-            "_password": "oris123"
-        }
-    
-    ],
-    "products": [
+  ],
+  "users": [
+    {
+      "firstName": "Saidazim",
+      "lastName": "Buriboyev",
+      "_login": "pokemon123",
+      "_password": "pokemon123"
+    },
+    {
+      "firstName": "Vorisjon",
+      "lastName": "Boboyev",
+      "_login": "oris123",
+      "_password": "oris123"
+    }
+  ],
+  "products": [
     {
       "id": 1,
       "name": "iPhone 15 Pro Max",
@@ -1590,7 +1589,7 @@
       "installment": 2492,
       "description": "Паровая швабра для дома"
     },
-     {
+    {
       "id": 14,
       "name": "Xiaomi Robot Vacuum S10+",
       "category": "cleaners",
@@ -1724,7 +1723,7 @@
     },
     {
       "id": 26,
-      "name":"Hamilton Khaki Field",
+      "name": "Hamilton Khaki Field",
       "category": "watches",
       "oldPrice": 69900,
       "newPrice": 59900,
@@ -1733,7 +1732,7 @@
       "installment": 4992,
       "description": "Военные часы с автоподзаводом"
     },
-     {
+    {
       "id": 27,
       "name": "Longines Master Collection",
       "category": "watches",
@@ -2000,7 +1999,7 @@
     {
       "id": 51,
       "name": "Zara Пальто шерстяное",
-      "category":"clothes",
+      "category": "clothes",
       "oldPrice": 19900,
       "newPrice": 14900,
       "discount": 25,
@@ -2137,8 +2136,74 @@
       "newPrice": 27900,
       "discount": 20,
       "image": "https://images.unsplash.com/photo-1585659722983-3a675dabf23d",
-      "installment":2325,
+      "installment": 2325,
       "description": "Аэрогриль 7.3 литра"
     }
-    ]
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "value": "smartfonlar",
+      "dataCat": "technology",
+      "name": "Smartfonlar va gadjetlar",
+      "description": "Smartfonlar va telefonlar,Gadjetlar,Smartfonlar uchun aksessuarlar,",
+      "image": "xobImage/1714023991-no text - 06.png"
+    },
+    {
+      "id": 2,
+      "value": "pc",
+      "dataCat": "technology",
+      "name": "Noutbuklar, kompyuterlar",
+      "description": "Noutbuklar,Kompyuterlar va Monitorlar,Tarmoq uskunalari,",
+      "image": "xobImage/1714024006-no text - 08 (1).png"
+    },
+    {
+      "id": 3,
+      "value": "tv",
+      "dataCat": "technology",
+      "name": "TV va proyektorlar",
+      "description": "Televizorlar va proyektorlar,TV uchun aksessuarlar,",
+      "image": "xobImage/1714024017-no text - 05.png"
+    },
+    {
+      "id": 4,
+      "value": "audio",
+      "dataCat": "technology",
+      "name": "Audiotexnikalar",
+      "description": "Portativ audio,Uy audiosi va DJ,Eshitish vositasi,",
+      "image": "xobImage/1714024028-no text - 03.png"
+    },
+    {
+      "id": 5,
+      "value": "transport",
+      "dataCat": "products_for_cars",
+      "name": "Transport",
+      "description": "Avtomobilar,Boshqa transport vositalari,",
+      "image": "xobImage/1716206035-IMG_2899.JPG"
+    },
+    {
+      "id": 6,
+      "value": "forHome",
+      "dataCat": "products_for_home",
+      "name": "Uy uchun",
+      "description": "Kiyim va poyabzal parvarishi,Quritgich va kir yuvish mashinalari,Uy asboblari,",
+      "image": "xobImage/1714024052-no text - 02 (1).png"
+    },
+    {
+      "id": 7,
+      "value": "oshxona",
+      "dataCat": "cleaners",
+      "name": "Oshxona",
+      "description": "Ovqat tayyorlanishi,Katta hajmdagi oshxona texnikasi,Mayda hajmdagi oshxona texnikasi,",
+      "image": "xobImage/1714024041-no text - 01.png"
+    },
+    {
+      "id": 8,
+      "value": "gozallik",
+      "dataCat": "parfiums",
+      "name": "Go‘zallik",
+      "description": "Tana parvarishi,pardoz vositalari,Oziq-ovqat qo‘shimchalari,",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs-ANQ818n3LjQMZmnq_KgDtre85dlHgaV5A&s"
+    }
+  ]
 }

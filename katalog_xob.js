@@ -76,34 +76,10 @@ const catalogMap = {
 
 
 
-let cards = document.querySelectorAll('.card')
-
-// katalog nomi locale ga sax qiladigan funksiya..!
-
-cards.forEach((card) => {
-    card.addEventListener("click", () => {
-        let pTegi = card.querySelector('.kategory-name')
-        let atributeValue = card.getAttribute('value')
-
-
-        let valuee = pTegi.innerText;
-        localStorage.setItem("vaelue", valuee)
-        localStorage.setItem("atributeVelyu", atributeValue)
-        console.log(pTegi);
 
 
 
 
-
-        let cardd = card.getAttribute('value');
-        console.log(cardd);
-        window.location.href = 'render_catalog.html';
-
-
-
-    })
-
-})
 
 // katalog boyicha filterlash funksiyasi
 
@@ -152,6 +128,30 @@ function render_catalog() {
 render_catalog()
 
 
+// kataloglarni render qilish
+
+function katalogRender(ctgry) {
+    const ctlgWrapper = document.querySelector('.card-wrapper-katalog');
+    ctlgWrapper.innerHTML = ''
+    ctgry.forEach((e) => {
+        const card = document.createElement('div')
+        card.classList = 'card flex flex-col w-auto justify-center items-start px-5 py-6'
+        card.innerHTML = `
+            <img class="w-[150px] mx-auto  "
+                            src="${e.image}"
+                            alt="img">
+                        <p class="kategory-name mx-auto  text-[16px]  font-medium mb-[10px] text-[#000000]">${e.description}</p>
+                        <p class="category-about text-[14px] font-medium text-[#0000009d] ml-6">Smartfonlar va telefonlar,
+                            <br> Gadjetlar, <br> Smartfonlar uchun aksessuarlar,
+                        </p>
+        `;
+
+        ctlgWrapper.append(card)
+    })
+
+}
+
+
 
 
 
@@ -160,7 +160,6 @@ const fetchh = async () => {
     try {
         const res = await fetch('http://localhost:3001/product');
         const data = await res.json();
-        // console.log(data);
         filtersCards(data)
 
     }
@@ -175,3 +174,6 @@ const fetchh = async () => {
     return
 }
 fetchh()
+
+
+
