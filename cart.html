@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Корзина - Alif Shop</title>
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center max-w-[1400px] mx-auto px-4">
+            <a href="#"><img width="113" src="https://via.placeholder.com/113x40/FFBE1F/000000?text=ALIF+SHOP"
+                    alt="Alif Shop Logo"></a>
+
+            <div class="formelm flex justify-between gap-8">
+                <a href="./index.html">
+                    <button
+                        class="flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px] hover:bg-[#f0b31a] transition">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        </svg>
+                        Главная
+                    </button>
+                </a>
+
+                <div
+                    class="input-box flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
+                    <input placeholder="Qidirish..." class="h-[48px] p-[12px] outline-none focus:outline-none flex-1"
+                        type="text">
+                    <button
+                        class="bg-[#FFBE1F] w-15 flex items-center justify-center px-4 hover:bg-[#f0b31a] transition">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="flex items-center gap-8">
+                <div class="flex items-center gap-6">
+                    <a href="#"
+                        class="flex flex-col items-center text-center text-sm text-yellow-500 transition relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
+                        </svg>
+                        <span class="text-xs font-bold">Savat</span>
+                        <span id="cartCount"
+                            class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </a>
+
+                    <a href="./favorites.html"
+                        class="flex flex-col items-center text-center text-sm hover:text-black transition relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                        </svg>
+                        <span class="text-xs">Saralanganlar</span>
+                        <span id="favCount"
+                            class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow transition">
+                        Kirish
+                    </a>
+
+                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                        <a href="#" class="hover:text-gray-600">RUS</a>
+                        <span class="text-gray-300">/</span>
+                        <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-8">
+        <div class="container max-w-[1400px] mx-auto px-4">
+            <div class="flex items-center gap-3 mb-8">
+                <a href="./index.html" class="text-gray-500 hover:text-yellow-500">Главная</a>
+                <span class="text-gray-400">/</span>
+                <span class="text-gray-700 font-semibold">Корзина</span>
+            </div>
+
+            <h1 class="text-4xl font-bold mb-8">Корзина</h1>
+
+            <div id="emptyCart" class="hidden text-center py-20">
+                <svg class="w-32 h-32 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
+                </svg>
+                <h2 class="text-2xl font-semibold text-gray-600 mb-4">Ваша корзина пуста</h2>
+                <p class="text-gray-500 mb-6">Добавьте товары, чтобы начать покупки</p>
+                <a href="./index.html"> <button
+                        class="inline-block bg-yellow-400 hover:bg-yellow-300 px-8 py-3 rounded-lg font-semibold transition">
+                        Главное
+                    </button></a>
+            </div>
+
+            <div id="cartContent" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-xl shadow p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-semibold">Товары в корзине</h2>
+                            <button id="clearCart" class="text-red-500 hover:text-red-600 text-sm font-medium">Очистить
+                                корзину</button>
+                        </div>
+                        <div id="cartItems" class="space-y-4"></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl shadow p-6 sticky top-24">
+                        <h2 class="text-xl font-semibold mb-6">Итого</h2>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-gray-600">
+                                <span>Товары (<span id="totalItems">0</span>):</span>
+                                <span id="subtotal">0</span> сум
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Скидка:</span>
+                                <span class="text-green-600">-<span id="discount">0</span> сум</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Доставка:</span>
+                                <span id="delivery">Бесплатно</span>
+                            </div>
+                            <hr class="my-4">
+                            <div class="flex justify-between text-xl font-bold">
+                                <span>Итого:</span>
+                                <span id="total">0</span> сум
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="flex items-center text-sm text-gray-600 mb-2">
+                                <input type="checkbox" id="installment" class="mr-2 w-4 h-4 accent-yellow-500">
+                                Оформить в рассрочку
+                            </label>
+                            <div id="installmentInfo"
+                                class="hidden bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-sm">
+                                <p class="font-semibold mb-1">Ежемесячный платеж:</p>
+                                <p class="text-lg font-bold text-yellow-600"><span id="monthlyPayment">0</span> сум/мес
+                                </p>
+                                <p class="text-gray-500 text-xs mt-1">на 12 месяцев</p>
+                            </div>
+                        </div>
+
+                        <button id="checkout"
+                            class="w-full bg-yellow-400 hover:bg-yellow-300 py-4 rounded-lg font-bold text-lg transition">
+                            Оформить заказ
+                        </button>
+
+                        <div class="mt-4 text-sm text-gray-500 text-center">
+                            <p>🔒 Безопасная оплата</p>
+                            <p class="mt-1">✓ Гарантия возврата 30 дней</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 max-w-xl">
+                <div class="bg-white rounded-xl shadow p-6">
+                    <h3 class="font-semibold mb-3">У вас есть промокод?</h3>
+                    <div class="flex gap-2">
+                        <input type="text" id="promoCode" placeholder="Введите промокод"
+                            class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-400">
+                        <button id="applyPromo"
+                            class="bg-yellow-400 hover:bg-yellow-300 px-6 py-2 rounded-lg font-semibold transition">
+                            Применить
+                        </button>
+                    </div>
+                    <p id="promoMessage" class="text-sm mt-2 hidden"></p>
+                    <p class="text-xs text-gray-400 mt-2">Попробуйте: ALIF10, SAVE20, WELCOME15</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#1f2227] text-gray-300 pt-12 pb-6 px-6 md:px-16 mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 max-w-[1400px] mx-auto">
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Hujjatlar</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Sotish uchun umumiy shartlar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Nizom</a></li>
+                    <li><a href="#" class="hover:text-white transition">Guvohnoma</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Servis</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Namoz vaqti</a></li>
+                    <li><a href="#" class="hover:text-white transition">Muddatli to'lov islomda</a></li>
+                    <li><a href="#" class="hover:text-white transition">alif shopda soting!</a></li>
+                    <li><a href="#" class="hover:text-white transition">Qaytarish</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Tovarlar katalogi</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Smartfonlar va telefonlar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Gadjetlar</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Axborot xizmati</h3>
+                <div class="space-y-2 text-sm">
+                    <p class="hover:text-white cursor-pointer transition">@alifshop_uz</p>
+                    <p class="hover:text-white cursor-pointer transition">+998 555 12 12 12</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-gray-700 my-6">
+        <p class="text-sm text-gray-400 text-center">2025 © alifshop.uz</p>
+    </footer>
+
+    <script>
+        let appliedPromo = null;
+
+        // Функция для добавления тестового товара
+        function addTestProduct() {
+            const testProduct = {
+                id: 'test-' + Date.now(),
+                name: 'iPhone 15 Pro Max',
+                image: 'https://via.placeholder.com/150/FFBE1F/000000?text=iPhone+15',
+                newPrice: '15 000 000',
+                quantity: 1
+            };
+
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartItems.push(testProduct);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+            renderCart();
+            updateCounts();
+        }
+
+        function updateCounts() {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const favIds = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+
+            const cartCount = document.getElementById('cartCount');
+            const favCount = document.getElementById('favCount');
+
+            if (cartItems.length > 0) {
+                const totalQuantity = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
+                cartCount.textContent = totalQuantity;
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+
+            if (favIds.length > 0) {
+                favCount.textContent = favIds.length;
+                favCount.classList.remove('hidden');
+            } else {
+                favCount.classList.add('hidden');
+            }
+        }
+
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+
+        function renderCart() {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCart = document.getElementById('emptyCart');
+            const cartContent = document.getElementById('cartContent');
+
+            if (cartItems.length === 0) {
+                emptyCart.classList.remove('hidden');
+                cartContent.classList.add('hidden');
+                return;
+            }
+
+            emptyCart.classList.add('hidden');
+            cartContent.classList.remove('hidden');
+
+            cartItemsContainer.innerHTML = '';
+
+            cartItems.forEach(item => {
+                const quantity = item.quantity || 1;
+                const itemTotal = item.newPrice * quantity;
+
+                const cartItem = document.createElement('div');
+                cartItem.className = 'flex gap-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-contain rounded">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg mb-2">${item.name}</h3>
+                        <p class="text-gray-600 text-sm mb-2">${item.newPrice} сум</p>
+                        <div class="flex items-center gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <button class="decrease-btn px-3 py-1 hover:bg-gray-100 transition" data-id="${item.id}">−</button>
+                                <span class="px-4 py-1 border-x border-gray-300">${quantity}</span>
+                                <button class="increase-btn px-3 py-1 hover:bg-gray-100 transition" data-id="${item.id}">+</button>
+                            </div>
+                            <button class="remove-btn text-red-500 hover:text-red-600 text-sm font-medium" data-id="${item.id}">
+                                Удалить
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-bold text-lg">${formatPrice(itemTotal)} сум</p>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            attachCartEventListeners();
+            calculateTotal();
+        }
+
+        function attachCartEventListeners() {
+            document.querySelectorAll('.increase-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.target.dataset.id;
+                    updateQuantity(id, 1);
+                });
+            });
+
+            document.querySelectorAll('.decrease-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.target.dataset.id;
+                    updateQuantity(id, -1);
+                });
+            });
+
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.target.dataset.id;
+                    removeFromCart(id);
+                });
+            });
+        }
+
+        function updateQuantity(id, change) {
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const item = cartItems.find(item => item.id === id);
+
+            if (item) {
+                item.quantity = (item.quantity || 1) + change;
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                    return;
+                }
+                localStorage.setItem("cartItems", JSON.stringify(cartItems));
+                renderCart();
+                updateCounts();
+            }
+        }
+
+        function removeFromCart(id) {
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartItems = cartItems.filter(item => item.id !== id);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            renderCart();
+            updateCounts();
+        }
+
+        function calculateTotal() {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            let subtotal = 0;
+            let totalItems = 0;
+
+            cartItems.forEach(item => {
+
+                const quantity = item.quantity || 1;
+                subtotal += item.newPrice * quantity;
+                totalItems += quantity;
+            });
+
+            let discount = 0;
+            if (appliedPromo) {
+                discount = Math.floor(subtotal * (appliedPromo.discount / 100));
+            }
+
+            const total = subtotal - discount;
+
+            document.getElementById('subtotal').textContent = formatPrice(subtotal);
+            document.getElementById('totalItems').textContent = totalItems;
+            document.getElementById('discount').textContent = formatPrice(discount);
+            document.getElementById('total').textContent = formatPrice(total);
+
+            const monthlyPayment = Math.ceil(total / 12);
+            document.getElementById('monthlyPayment').textContent = formatPrice(monthlyPayment);
+        }
+
+        document.getElementById('clearCart').addEventListener('click', () => {
+            if (confirm('Вы уверены, что хотите очистить корзину?')) {
+                localStorage.removeItem('cartItems');
+                appliedPromo = null;
+                renderCart();
+                updateCounts();
+            }
+        });
+
+        document.getElementById('installment').addEventListener('change', (e) => {
+            const installmentInfo = document.getElementById('installmentInfo');
+            if (e.target.checked) {
+                installmentInfo.classList.remove('hidden');
+            } else {
+                installmentInfo.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('applyPromo').addEventListener('click', () => {
+            const promoCode = document.getElementById('promoCode').value.trim().toUpperCase();
+            const promoMessage = document.getElementById('promoMessage');
+
+            const promoCodes = {
+                'ALIF10': { discount: 10, message: 'Промокод применен! Скидка 10%' },
+                'SAVE20': { discount: 20, message: 'Промокод применен! Скидка 20%' },
+                'WELCOME15': { discount: 15, message: 'Промокод применен! Скидка 15%' }
+            };
+
+            if (promoCodes[promoCode]) {
+                appliedPromo = promoCodes[promoCode];
+                promoMessage.textContent = appliedPromo.message;
+                promoMessage.classList.remove('hidden', 'text-red-500');
+                promoMessage.classList.add('text-green-600');
+                calculateTotal();
+            } else {
+                promoMessage.textContent = 'Неверный промокод';
+                promoMessage.classList.remove('hidden', 'text-green-600');
+                promoMessage.classList.add('text-red-500');
+                appliedPromo = null;
+                calculateTotal();
+            }
+        });
+
+        document.getElementById('checkout').addEventListener('click', () => {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            if (cartItems.length === 0) return;
+
+            alert('Спасибо за заказ! Мы свяжемся с вами в ближайшее время.');
+            localStorage.removeItem('cartItems');
+            appliedPromo = null;
+            renderCart();
+            updateCounts();
+        });
+
+        // Инициализация при загрузке страницы
+        renderCart();
+        updateCounts();
+    </script>
+</body>
+
+</html>

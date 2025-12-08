@@ -1,48 +1,48 @@
 function startTimer() {
-    const now = new Date();
+  const now = new Date();
 
-    // Bugungi sana uchun 11:00 maqsad qilib olinadi
-    let target = new Date();
-    target.setHours(11, 0, 0, 0);
+  // Bugungi sana uchun 11:00 maqsad qilib olinadi
+  let target = new Date();
+  target.setHours(11, 0, 0, 0);
 
-    // Agar hozir 11:00 dan o‘tib ketgan bo‘lsa — ertangi 11:00 ga qo‘yiladi
-    if (now > target) {
-        target.setDate(target.getDate() + 1);
-    }
+  // Agar hozir 11:00 dan o‘tib ketgan bo‘lsa — ertangi 11:00 ga qo‘yiladi
+  if (now > target) {
+    target.setDate(target.getDate() + 1);
+  }
 
-    function update() {
-        let diff = target - new Date();
+  function update() {
+    let diff = target - new Date();
 
-        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        let minutes = Math.floor((diff / (1000 * 60)) % 60);
-        let seconds = Math.floor((diff / 1000) % 60);
+    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    let minutes = Math.floor((diff / (1000 * 60)) % 60);
+    let seconds = Math.floor((diff / 1000) % 60);
 
-        // document.getElementById("d").textContent = days;
-        // document.getElementById("h").textContent = hours;
-        // document.getElementById("m").textContent = minutes;
-        // document.getElementById("s").textContent = seconds;
-    }
+    // document.getElementById("d").textContent = days;
+    // document.getElementById("h").textContent = hours;
+    // document.getElementById("m").textContent = minutes;
+    // document.getElementById("s").textContent = seconds;
+  }
 
-    update();
-    setInterval(update, 1000);
+  update();
+  setInterval(update, 1000);
 }
 
 startTimer();
 
 let finc = async () => {
-    try {
-      const res = await fetch('http://localhost:3001/product');
-      const data = await res.json();
-      console.log(data);
-  
+  try {
+    const res = await fetch('http://localhost:3001/product');
+    const data = await res.json();
+    console.log(data);
 
 
 
 
 
-      const categories = {};
-   data.forEach(item => {
+
+    const categories = {};
+    data.forEach(item => {
       // create category array if missing
       if (!categories[item.category]) {
         categories[item.category] = [];
@@ -51,14 +51,11 @@ let finc = async () => {
       categories[item.category].push(item);
     });
 
-    console.log(categories);
 
 
 
-    let random = Math.round(data.id)
-    console.log(random , 'mana');
-    
-    
+
+
     let tech = document.querySelector('.tech');
     let techn = categories.technology
 
@@ -73,287 +70,320 @@ let finc = async () => {
 
     let car = document.querySelector('.cars');
     let cars = categories.products_for_cars
-    
+
 
     let watchesss = document.querySelector('.watches');
     let watches = categories.watches
-    console.log(watches);
 
     watches.forEach(watch => {
-        let card = document.createElement('div');
-          card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
-          card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+      let card = document.createElement('div');
+      card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
+      card.innerHTML = `
+         <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton  bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold " data-id="${watch.id}">
         В корзину
       </button>
           `;
-          watchesss.append(card);
-    })
+      watchesss.append(card);
+      console.log(watch.id)
+    });
 
-     techn.forEach(watch => {
-        let card = document.createElement('div');
-          card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
-          card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+    techn.forEach(watch => {
+      let card = document.createElement('div');
+      card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
+      card.innerHTML = `
+         <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
-          tech.append(card);
+      tech.append(card);
     })
-    
- let cloth = document.querySelector(".clothes")
- let clothes = categories.clothes
 
-  clothes.forEach(watch => {
-        let card = document.createElement('div');
-          card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
-          card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+    let cloth = document.querySelector(".clothes")
+    let clothes = categories.clothes
+
+    clothes.forEach(watch => {
+      let card = document.createElement('div');
+      card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
+      card.innerHTML = `
+          <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
-          cloth.append(card);
+      cloth.append(card);
     })
 
-   
+
 
     parfium.forEach(watch => {
-        let card = document.createElement('div');
-          card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
-          card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+      let card = document.createElement('div');
+      card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
+      card.innerHTML = `
+          <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
-          parfiums.append(card);
+      parfiums.append(card);
     })
 
     cars.forEach(watch => {
-        let card = document.createElement('div');
-          card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
-          card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+      let card = document.createElement('div');
+      card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
+      card.innerHTML = `
+         <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
-          car.append(card);
+      car.append(card);
     })
 
     home.forEach(watch => {
-        let card = document.createElement('div');
-          card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
-          card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+      let card = document.createElement('div');
+      card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
+      card.innerHTML = `
+          <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
-          homes.append(card);
+      homes.append(card);
     })
 
-     cleaners.forEach(watch => {
-        let card = document.createElement('div');
-          card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
-          card.innerHTML = `
-           <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
+    cleaners.forEach(watch => {
+      let card = document.createElement('div');
+      card.classList = 'w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col';
+      card.innerHTML = `
+       <button class="heart-btn absolute top-6 right-6" data-id="${watch.id}">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#c6c6c6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="heart-icon transition">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
+             5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
+             1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+</button>
       <img src="${watch.image}" class="w-[200px] h-[200px] object-cover mx-auto" />
       <h3 class="mt-3 font-semibold text-sm">${watch.name}</h3>
       <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${watch.installment}</span> сум/мес</p>
       <p class="font-semibold text-lg mt-1">${watch.newPrice} сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold">
+      <button class="mt-auto buttton bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${watch.id}">
         В корзину
       </button>
           `;
-          cleaner.append(card);
+      cleaner.append(card);
     })
-  
-
-
-    // function  sortAll(data) {
-    //   let selectorrr = document.querySelector('.btn.all');
-    
-    //   selectorrr.addEventListener('change', () => {
-    //     let selectValue = selectorrr.value;
-    //     let newArr = [];
-
-    //     if (selectValue === 'all') {
-    //       newArr = data;
-  
-  
-  
-    //     } else {
-    //       newArr = data.filter(item =>
-    //         item.category &&
-    //         item.category.toLowerCase().includes(selectValue.toLowerCase())
-    //       );
-    //     }
-    
-    //      renderdom(newArr);
-    //   });
-    // }
-  
-  
-    //   renderdom(data);
-  
-  
-  
-    // sortAll(data);
 
 
 
 
+    document.querySelectorAll('.buttton').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.target.dataset.id;
+        console.log(id);
 
-  
-    } catch (e) {
-      console.error(e);
-    } finally {
-      console.log('nima bosayam ishladim');
+
+        addIdToLocalStorage(id);
+
+        console.log("Saved IDs now:", JSON.parse(localStorage.getItem("savedIds")));
+
+      });
+    });
+
+    function addIdToLocalStorage(id) {
+      let ids = JSON.parse(localStorage.getItem("savedIds")) || [];
+
+      ids.push(id);
+      localStorage.setItem("savedIds", JSON.stringify(ids));
     }
+
+
+
+
+    document.addEventListener("click", (e) => {
+
+      const heartBtn = e.target.closest(".heart-btn");
+      if (!heartBtn) return;
+
+      const id = heartBtn.dataset.id;
+      console.log("Heart clicked:", id);
+
+      toggleFavorite(id);
+      updateHeartStyles();
+    });
+
+
+    function toggleFavorite(id) {
+      let favorites = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+
+      if (favorites.includes(id)) {
+        favorites = favorites.filter(item => item !== id);
+      } else {
+        favorites.push(id);
+      }
+
+      localStorage.setItem("favoriteIds", JSON.stringify(favorites));
+    }
+
+    function updateHeartStyles() {
+      const favorites = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+
+      document.querySelectorAll(".heart-btn").forEach(btn => {
+        const svg = btn.querySelector(".heart-icon");
+
+        if (favorites.includes(btn.dataset.id)) {
+          svg.classList.add("fill-red-500", "stroke-red-500");
+        } else {
+          svg.classList.remove("fill-red-500", "stroke-red-500");
+        }
+      });
+    }
+
+    updateHeartStyles();
+
+
+
+
+  } catch (e) {
+    console.error(e);
+  } finally {
+    console.log('nima bosayam ishladim');
   }
-  
-  finc();
-  
+}
+
+finc();
+
 function katalos() {
   window.location.href = "katalog_xob.html"
 }
@@ -362,23 +392,23 @@ const closeBtn = document.getElementById("closeCatalog");
 const modal = document.getElementById("catalogModal");
 
 openBtn.addEventListener("click", (e) => {
-    e.preventDefault();      
-    e.stopPropagation();    
+  e.preventDefault();
+  e.stopPropagation();
 
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
 });
 
 closeBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
+  e.stopPropagation();
 
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
 });
 
 modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-    }
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
 });

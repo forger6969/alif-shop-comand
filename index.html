@@ -8,368 +8,444 @@
   <title>Alif shop</title>
 </head>
 
-<body class="">
-  <header>
+<body class="bg-gray-50">
+  <header class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center max-w-[1400px] mx-auto px-4">
+      <a href="index.html"><img width="113" src="./imgs/Container.png" alt="Alif Shop Logo"></a>
 
-    </div>
-    <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center">
-      <a href="index.html"><img width="113" src="./imgs/Container.png" alt=""></a>
-      <form class="formelm flex justify-between gap-8" action="">
-        <button class=" flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px]">
-          <img class="pt-[2px]" width="22" src="./imgs/burger.png" alt="">
-          Tovarlar katalogi
-        </button>
-        <div
-          class="input-box  flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
-          <input placeholder="Yourprods" class="h-[48px]  p-[12px] outline-none focus:outline-none" type="text">
-
-          <img width="300px" src="./imgs/Screenshot 2025-11-28 171813.png" alt="">
-        </div>
-    </div>
-    <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center">
-      <a href="index.html"><img width="113" src="./imgs/Container.png" alt=""></a>
-      <form class="formelm flex justify-between gap-8" action="">
-        <a href="./katalog_xob.html">
-
-          <button class=" flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px]">
-            <img class="pt-[2px]" width="22" src="./imgs/burger.png" alt="">
-
+      <div class="formelm flex justify-between gap-8">
+        <a href="#" id="openCatalog">
+          <button class="flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px] hover:bg-[#f0b31a] transition">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
             Tovarlar katalogi
           </button>
-
         </a>
+
         <div
-          class="input-box  flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
-          <input placeholder="Yourprods" class="h-[48px]  p-[12px] outline-none focus:outline-none" type="text">
-          <button class="bg-[#FFBE1F] w-15 flex items-center justify-center">
-            <img height="100%" src="./imgs/Component 2.png" alt="">
+          class="input-box flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
+          <input placeholder="Qidirish..." class="h-[48px] p-[12px] outline-none focus:outline-none flex-1" type="text">
+          <button class="bg-[#FFBE1F] w-15 flex items-center justify-center px-4 hover:bg-[#f0b31a] transition">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
           </button>
         </div>
-      </form>
+      </div>
 
-      <div class="">
-        <nav class="flex items-center gap-8">
-          <!-- left: icons -->
-          <div class="flex items-center gap-6">
-            <!-- Savat -->
-            <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
-              <!-- cart icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                  d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
-              </svg>
-              <span class="text-xs">Savat</span>
-            </a>
+      <nav class="flex items-center gap-8">
+        <div class="flex items-center gap-6">
+          <a href="cart.html"
+            class="flex flex-col items-center text-center text-sm hover:text-black transition relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
+            </svg>
+            <span class="text-xs">Savat</span>
+            <span id="cartCount"
+              class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+          </a>
 
-            <!-- Aviachtiptalar with red badge -->
-            <a href="#" class="relative flex flex-col items-center text-center text-sm hover:text-black">
-              <!-- plane icon -->
-              <div class="relative">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                    d="M10.5 6L3 9l4 2 4 10 1-7 7-1-9-6z" />
-                </svg>
-
-                <!-- red circle badge -->
-                <div class="absolute -top-1 -right-3 icon-badge">
-                  <div
-                    class="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white text-[10px] leading-none font-semibold shadow">
-                    0%
-                  </div>
-                </div>
-              </div>
-              <span class="text-xs">Aviachiptalar</span>
-            </a>
-
-            <!-- Saralanganlar (heart) -->
-            <a href="#" class="flex flex-col items-center text-center text-sm hover:text-black">
+          <a href="#" class="relative flex flex-col items-center text-center text-sm hover:text-black transition">
+            <div class="relative">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                  d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                  d="M10.5 6L3 9l4 2 4 10 1-7 7-1-9-6z" />
               </svg>
-              <span class="text-xs">Saralanganlar</span>
-            </a>
-          </div>
-
-          <!-- center (optional empty) to mimic image spacing -->
-          <div></div>
-
-          <!-- right: Kirish button + language links -->
-          <div class="flex items-center gap-4">
-            <!-- Kirish button -->
-            <a href="#"
-              class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-yellow-200">
-              Kirish
-            </a>
-
-            <div class="flex items-center gap-2 text-sm text-gray-400">
-              <a href="#" class="hover:text-gray-600">RUS</a>
-              <span class="text-gray-300">/</span>
-              <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
+              <div class="absolute -top-1 -right-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-white text-[10px] leading-none font-semibold shadow">
+                  0%
+                </div>
+              </div>
             </div>
+            <span class="text-xs">Aviachiptalar</span>
+          </a>
+
+          <a href="favorites.html"
+            class="flex flex-col items-center text-center text-sm hover:text-black transition relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+            </svg>
+            <span class="text-xs">Saralanganlar</span>
+            <span id="favCount"
+              class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="#"
+            class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow transition">
+            Kirish
+          </a>
+
+          <div class="flex items-center gap-2 text-sm text-gray-400">
+            <a href="#" class="hover:text-gray-600">RUS</a>
+            <span class="text-gray-300">/</span>
+            <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
           </div>
-        </nav>
-      </div>
-    </div>
+        </div>
+      </nav>
     </div>
   </header>
 
-
-
-  <div id="catalogModal" class="fixed inset-0 hidden items-start justify-center z-50">
-    <div class="bg-white w-[100%] mt-35 rounded-xl p-8 relative">
+  <!-- Catalog Modal -->
+  <div id="catalogModal" class="fixed inset-0 hidden items-start justify-center z-50 bg-black bg-opacity-50">
+    <div class="bg-white w-[90%] max-w-[1200px] mt-20 rounded-xl p-8 relative">
       <button id="closeCatalog" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">
         ✕
       </button>
       <div class="grid grid-cols-4 gap-8">
-        <div class="space-y-3 font-medium  justify-items-center">
-          <p class="text-yellow-500">Smartfonlar va gadjetlar</p>
-          <p>Kompyuterlar</p>
-          <p>TV va proektorlar</p>
-          <p>Audiotexnika</p>
-          <p>Transport</p>
-          <p>Uy uchun texnika</p>
-          <p>Oshxona uchun texnika</p>
-          <p>Go‘zallik</p>
+        <div class="space-y-3 font-medium">
+          <p class="text-yellow-500 cursor-pointer hover:text-yellow-600">Smartfonlar va gadjetlar</p>
+          <p class="cursor-pointer hover:text-yellow-500">Kompyuterlar</p>
+          <p class="cursor-pointer hover:text-yellow-500">TV va proektorlar</p>
+          <p class="cursor-pointer hover:text-yellow-500">Audiotexnika</p>
+          <p class="cursor-pointer hover:text-yellow-500">Transport</p>
+          <p class="cursor-pointer hover:text-yellow-500">Uy uchun texnika</p>
+          <p class="cursor-pointer hover:text-yellow-500">Oshxona uchun texnika</p>
+          <p class="cursor-pointer hover:text-yellow-500">Go'zallik</p>
         </div>
         <div>
           <h3 class="font-semibold mb-3">Smartfonlar va telefonlar</h3>
           <ul class="space-y-2 text-gray-600">
-            <li>Apple</li>
-            <li>Samsung</li>
-            <li>Xiaomi</li>
-            <li>Honor</li>
-            <li>Vivo</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Apple</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Samsung</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Xiaomi</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Honor</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Vivo</li>
           </ul>
 
           <h3 class="font-semibold mt-6 mb-3">Gadjetlar</h3>
           <ul class="space-y-2 text-gray-600">
-            <li>VR ko‘zoynaklar</li>
-            <li>Powerbanklar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">VR ko'zoynaklar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Powerbanklar</li>
           </ul>
         </div>
         <div>
           <h3 class="font-semibold mb-3">Aksesuarlar</h3>
           <ul class="space-y-2 text-gray-600">
-            <li>G‘iloflar</li>
-            <li>Plenka va steklo</li>
-            <li>Quvvatlagichlar</li>
-            <li>Kabellar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">G'iloflar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Plenka va steklo</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Quvvatlagichlar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Kabellar</li>
           </ul>
 
           <h3 class="font-semibold mt-6 mb-3">Tegishli tovarlar</h3>
           <ul class="space-y-2 text-gray-600">
-            <li>Batareya</li>
-            <li>Akkumulyator</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Batareya</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Akkumulyator</li>
           </ul>
         </div>
         <div>
           <h3 class="font-semibold mb-3">Soat va aksessuarlar</h3>
           <ul class="space-y-2 text-gray-600">
-            <li>Aqlli soatlar</li>
-            <li>Fitnes brasletlar</li>
-            <li>Soat kamarlari</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Aqlli soatlar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Fitnes brasletlar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Soat kamarlari</li>
           </ul>
           <h3 class="font-semibold mt-6 mb-3">Foto va video</h3>
           <ul class="space-y-2 text-gray-600">
-            <li>Kameralar</li>
-            <li>Fotoapparatlar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Kameralar</li>
+            <li class="hover:text-yellow-500 cursor-pointer">Fotoapparatlar</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-
-
-
-
   <main>
+    <img src="https://via.placeholder.com/1600x491/FFBE1F/000000?text=Alif+Shop+Banner" alt="Banner" class="w-full">
 
-    <img onclick="imgTelefons()" src="xobImage/1764132760-w47_shop_allo_1600x491_uz.png" alt="img" class="w-full">
+    <div class="w-full px-4 py-8">
+      <div class="container w-[95%] max-w-[1400px] mx-auto">
 
-    <div class="w-full px-4">
+        <section class="mb-12">
+          <h1 class="text-[40px] font-bold mb-6">Часы</h1>
+          <div class="flex watches flex-wrap gap-4"></div>
+        </section>
 
-      <!-- Wrapper -->
-      <div class="container w-[95%] max-w-[100%] mx-auto">
-        <!-- <div class="flex wrapper gap-[20px] flex-wrap justify-between">
+        <section class="mb-12">
+          <h1 class="text-[40px] font-bold mb-6">Електронные технологии</h1>
+          <div class="flex tech flex-wrap gap-4"></div>
+        </section>
 
-    
-    <div class="w-[19%] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col">
-    <button class="absolute top-6 right-6">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#c6c6c6"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="hover:fill-red-500 hover:stroke-red-500 transition">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 
-               5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 
-               1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-    </svg>
-    </button>
-      <img src="img1.png" class="w-full h-40 object-cover mx-auto" />
-      <h3 class="mt-3 font-semibold text-sm">Product title</h3>
-      <p class="text-black text-sm bg-orange-100 pl-[10px] w-[160px]  border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">212 990</span> сум/мес</p>
-      <p class="font-semibold text-lg mt-1">2 921 000 сум</p>
-      <button class="mt-auto bg-yellow-400 w-full duration-300 ease-in  hover:bg-yellow-300 py-2 rounded-lg font-semibold">
-        В корзину
-      </button>
-    </div>
+        <section class="mb-12">
+          <h1 class="text-[40px] font-bold mb-6">Одежда</h1>
+          <div class="flex clothes flex-wrap gap-4"></div>
+        </section>
 
+        <section class="mb-12">
+          <h1 class="text-[40px] font-bold mb-6">Парфюмерия</h1>
+          <div class="flex parfiums flex-wrap gap-4"></div>
+        </section>
 
-    
+        <section class="mb-12">
+          <h1 class="text-[40px] font-bold mb-6">Автотовары</h1>
+          <div class="flex cars flex-wrap gap-4"></div>
+        </section>
 
-  </div> -->
+        <section class="mb-12">
+          <h1 class="text-[40px] font-bold mb-6">Полный комплект для нового дома</h1>
+          <div class="flex home flex-wrap gap-4"></div>
+        </section>
 
-        <h1 class="w-[50%] text-[50px] ">Часы</h1>
-        <div class="flex watches  flex-wrap justify-between"></div>
+        <section class="mb-12">
+          <h1 class="text-[40px] font-bold mb-6">Товары для чистого дома</h1>
+          <div class="flex cleaners flex-wrap gap-4"></div>
+        </section>
 
-        <h1 class="w-[50%] text-[50px] ">Електронные технологии</h1>
-        <div class="flex tech  flex-wrap justify-between"></div>
-
-        <h1 class="w-[50%] text-[50px] ">Одежда</h1>
-        <div class="flex clothes  flex-wrap justify-between"></div>
-
-
-        <!-- FOOTER -->
-
-
-
-        <h1 class="w-[50%] text-[50px] ">Парфюмерия</h1>
-        <div class="flex parfiums  flex-wrap justify-between"></div>
-
-        <h1 class="w-[50%] text-[50px] ">Автотовары</h1>
-        <div class="flex cars  flex-wrap justify-between"></div>
-
-        <h1 class="w-[50%] text-[50px] ">Полный комплект для нового дома</h1>
-        <div class="flex home  flex-wrap justify-between"></div>
-
-        <h1 class="w-[50%] text-[50px] ">Товары для чистого дома</h1>
-        <div class="flex cleaners  flex-wrap justify-between"></div>
-
+        <button
+          class="m-[50px] p-[20px] bg-[#ffbe1f] flex gap-[20px] px-[100px] text-[20px] font-[800] items-center justify-center rounded-[20px] mx-auto hover:opacity-70 duration-300 ease-out"
+          onclick="window.location.href='katalog_xob.html'">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_12922_4050)">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M2.66675 0.666656C1.56218 0.666656 0.666748 1.56208 0.666748 2.66666V7.33332C0.666748 8.43789 1.56218 9.33332 2.66675 9.33332H7.33341C8.43798 9.33332 9.33341 8.43789 9.33341 7.33332V2.66666C9.33341 1.56209 8.43799 0.666656 7.33342 0.666656H2.66675ZM2.66675 2.66666L7.33342 2.66666L7.33341 7.33332L2.66675 7.33332V2.66666ZM12.6667 0.666656C11.5622 0.666656 10.6667 1.56208 10.6667 2.66666V7.33332C10.6667 8.43789 11.5622 9.33332 12.6667 9.33332H17.3334C18.438 9.33332 19.3334 8.43789 19.3334 7.33332V2.66666C19.3334 1.56209 18.438 0.666656 17.3334 0.666656H12.6667ZM12.6667 2.66666L17.3334 2.66666L17.3334 7.33332L12.6667 7.33332V2.66666ZM0.666748 12.6667C0.666748 11.5621 1.56218 10.6667 2.66675 10.6667H7.33342C8.43799 10.6667 9.33341 11.5621 9.33341 12.6667V17.3333C9.33341 18.4379 8.43798 19.3333 7.33341 19.3333H2.66675C1.56218 19.3333 0.666748 18.4379 0.666748 17.3333V12.6667ZM7.33342 12.6667H2.66675V17.3333L7.33341 17.3333L7.33342 12.6667ZM12.6667 10.6667C11.5622 10.6667 10.6667 11.5621 10.6667 12.6667V17.3333C10.6667 18.4379 11.5622 19.3333 12.6667 19.3333H17.3334C18.438 19.3333 19.3334 18.4379 19.3334 17.3333V12.6667C19.3334 11.5621 18.438 10.6667 17.3334 10.6667H12.6667ZM12.6667 12.6667H17.3334L17.3334 17.3333L12.6667 17.3333V12.6667Z"
+                fill="#24272C"></path>
+            </g>
+          </svg>
+          Kotalogga o'tish
+        </button>
       </div>
-
-      <button
-        class="m-[50px] p-[20px] bg-[#ffbe1f] flex gap-[20px] px-[100px] text-[20px] font-[800] items-center justify-center rounded-[20px] mx-auto hover:opacity-70 duration-300 ease-out"
-        onclick="katalos()"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_12922_4050)">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M2.66675 0.666656C1.56218 0.666656 0.666748 1.56208 0.666748 2.66666V7.33332C0.666748 8.43789 1.56218 9.33332 2.66675 9.33332H7.33341C8.43798 9.33332 9.33341 8.43789 9.33341 7.33332V2.66666C9.33341 1.56209 8.43799 0.666656 7.33342 0.666656H2.66675ZM2.66675 2.66666L7.33342 2.66666L7.33341 7.33332L2.66675 7.33332V2.66666ZM12.6667 0.666656C11.5622 0.666656 10.6667 1.56208 10.6667 2.66666V7.33332C10.6667 8.43789 11.5622 9.33332 12.6667 9.33332H17.3334C18.438 9.33332 19.3334 8.43789 19.3334 7.33332V2.66666C19.3334 1.56209 18.438 0.666656 17.3334 0.666656H12.6667ZM12.6667 2.66666L17.3334 2.66666L17.3334 7.33332L12.6667 7.33332V2.66666ZM0.666748 12.6667C0.666748 11.5621 1.56218 10.6667 2.66675 10.6667H7.33342C8.43799 10.6667 9.33341 11.5621 9.33341 12.6667V17.3333C9.33341 18.4379 8.43798 19.3333 7.33341 19.3333H2.66675C1.56218 19.3333 0.666748 18.4379 0.666748 17.3333V12.6667ZM7.33342 12.6667H2.66675V17.3333L7.33341 17.3333L7.33342 12.6667ZM12.6667 10.6667C11.5622 10.6667 10.6667 11.5621 10.6667 12.6667V17.3333C10.6667 18.4379 11.5622 19.3333 12.6667 19.3333H17.3334C18.438 19.3333 19.3334 18.4379 19.3334 17.3333V12.6667C19.3334 11.5621 18.438 10.6667 17.3334 10.6667H12.6667ZM12.6667 12.6667H17.3334L17.3334 17.3333L12.6667 17.3333V12.6667Z"
-              fill="#24272C"></path>
-          </g>
-          <defs>
-            <clipPath id="clip0_12922_4050">
-              <rect width="20" height="20" fill="white"></rect>
-            </clipPath>
-          </defs>
-        </svg> Kotalogga o'tish</button>
+    </div>
   </main>
 
   <footer class="bg-[#1f2227] text-gray-300 pt-12 pb-6 px-6 md:px-16 mt-10">
-    <!-- asd -->
-    <!-- Top sections -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-
-      <!-- Column 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 max-w-[1400px] mx-auto">
       <div>
         <h3 class="font-semibold text-lg mb-3 text-white">Hujjatlar</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-white">Sotish uchun umumiy shartlar</a></li>
-          <li><a href="#" class="hover:text-white">Nizom</a></li>
-          <li><a href="#" class="hover:text-white">Guvohnoma</a></li>
+          <li><a href="#" class="hover:text-white transition">Sotish uchun umumiy shartlar</a></li>
+          <li><a href="#" class="hover:text-white transition">Nizom</a></li>
+          <li><a href="#" class="hover:text-white transition">Guvohnoma</a></li>
         </ul>
       </div>
 
-      <!-- Column 2 -->
       <div>
         <h3 class="font-semibold text-lg mb-3 text-white">Servis</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-white">Namoz vaqti</a></li>
-          <li><a href="#" class="hover:text-white">Muddatli to'lov islomda</a></li>
-          <li><a href="#" class="hover:text-white">alif shopda soting!</a></li>
-          <li><a href="#" class="hover:text-white">Qaytarish</a></li>
+          <li><a href="#" class="hover:text-white transition">Namoz vaqti</a></li>
+          <li><a href="#" class="hover:text-white transition">Muddatli to'lov islomda</a></li>
+          <li><a href="#" class="hover:text-white transition">alif shopda soting!</a></li>
+          <li><a href="#" class="hover:text-white transition">Qaytarish</a></li>
         </ul>
       </div>
 
-      <!-- Column 3 -->
       <div>
         <h3 class="font-semibold text-lg mb-3 text-white">Tovarlar katalogi</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-white">Smartfonlar va telefonlar</a></li>
-          <li><a href="#" class="hover:text-white">Gadjetlar</a></li>
-          <li><a href="#" class="hover:text-white">Smartfonlar uchun aksessuarlar</a></li>
-          <li><a href="#" class="hover:text-white">Tegishli tovarlar</a></li>
-          <li><a href="#" class="hover:text-white">Soat va aksessuarlar</a></li>
+          <li><a href="#" class="hover:text-white transition">Smartfonlar va telefonlar</a></li>
+          <li><a href="#" class="hover:text-white transition">Gadjetlar</a></li>
+          <li><a href="#" class="hover:text-white transition">Smartfonlar uchun aksessuarlar</a></li>
+          <li><a href="#" class="hover:text-white transition">Tegishli tovarlar</a></li>
+          <li><a href="#" class="hover:text-white transition">Soat va aksessuarlar</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="font-semibold text-lg mb-3 text-white">Biz ijtimoiy axborot vositalarida</h3>
-
         <div class="flex items-center gap-3 mb-6">
-          <a href="#" class="w-8 h-8">
+          <a href="#" class="w-8 h-8 hover:opacity-70 transition">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
-              class="w-full" />
+              class="w-full" alt="Instagram" />
           </a>
-
-          <a href="#" class="w-8 h-8">
+          <a href="#" class="w-8 h-8 hover:opacity-70 transition">
             <img
-              src="https://img.utdstc.com/icon/464/b87/464b877ea1b27638704973e0ac78a42c71a43d496cffda0c34332f1e4b948960:200"
-              class="w-full" />
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png"
+              class="w-full" alt="Twitter" />
           </a>
-
-          <a href="#" class="w-8 h-8">
+          <a href="#" class="w-8 h-8 hover:opacity-70 transition">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png"
-              class="w-full" />
-          </a>
-
-          <a href="#" class="w-8 h-8">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Odnoklassniki.svg/2059px-Odnoklassniki.svg.png"
-              class="w-full" />
-          </a>
-
-          <!-- TikTok -->
-          <a href="#" class="w-8 h-8">
-            <img
-              src="https://store-images.s-microsoft.com/image/apps.47495.13634052595610511.c45457c9-b4af-46b0-8e61-8d7c0aec3f56.a8b71481-8a43-465d-88d6-e63add92c112"
-              class="w-full" />
+              class="w-full" alt="Telegram" />
           </a>
         </div>
 
         <h3 class="font-semibold text-lg mb-3 text-white">Axborot xizmati</h3>
-
         <div class="space-y-2 text-sm">
-          <p class="hover:text-white cursor-pointer">@alifshop_uz</p>
-          <p class="hover:text-white cursor-pointer">+998 555 12 12 12</p>
+          <p class="hover:text-white cursor-pointer transition">@alifshop_uz</p>
+          <p class="hover:text-white cursor-pointer transition">+998 555 12 12 12</p>
         </div>
       </div>
-
     </div>
 
     <hr class="border-gray-700 my-6">
-
-    <p class="text-sm text-gray-400">
-      2025 © alifshop.uz
-    </p>
-
+    <p class="text-sm text-gray-400 text-center">2025 © alifshop.uz</p>
   </footer>
 
-  <script src="./main.js"></script>
-  <script src="katalog_xob.js"></script>
-</body>
+  <script>
+    // Update cart and favorites count
+    function updateCounts() {
+      const cartIds = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const favIds = JSON.parse(localStorage.getItem("favoriteIds")) || [];
 
+      const cartCount = document.getElementById('cartCount');
+      const favCount = document.getElementById('favCount');
+
+      if (cartIds.length > 0) {
+        cartCount.textContent = cartIds.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.classList.remove('hidden');
+      } else {
+        cartCount.classList.add('hidden');
+      }
+
+      if (favIds.length > 0) {
+        favCount.textContent = favIds.length;
+        favCount.classList.remove('hidden');
+      } else {
+        favCount.classList.add('hidden');
+      }
+    }
+
+    // Catalog Modal
+    const openBtn = document.getElementById("openCatalog");
+    const closeBtn = document.getElementById("closeCatalog");
+    const modal = document.getElementById("catalogModal");
+
+    openBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+
+    // Fetch products
+    async function fetchProducts() {
+      try {
+        const res = await fetch('http://localhost:3001/product');
+        const data = await res.json();
+
+        const categories = {};
+        data.forEach(item => {
+          if (!categories[item.category]) {
+            categories[item.category] = [];
+          }
+          categories[item.category].push(item);
+        });
+
+        renderProducts('.watches', categories.watches || []);
+        renderProducts('.tech', categories.technology || []);
+        renderProducts('.clothes', categories.clothes || []);
+        renderProducts('.parfiums', categories.parfiums || []);
+        renderProducts('.cars', categories.products_for_cars || []);
+        renderProducts('.home', categories.products_for_home || []);
+        renderProducts('.cleaners', categories.cleaners || []);
+
+        attachEventListeners();
+        updateHeartStyles();
+        updateCounts();
+      } catch (e) {
+        console.error('Error fetching products:', e);
+      }
+    }
+
+    function renderProducts(selector, products) {
+      const container = document.querySelector(selector);
+      if (!container) return;
+
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'w-[calc(20%-16px)] min-w-[200px] card relative mb-[25px] bg-white rounded-xl shadow p-4 flex gap-[10px] flex-col hover:shadow-lg transition';
+        card.innerHTML = `
+          <button class="heart-btn absolute top-6 right-6" data-id="${product.id}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c6c6c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+          <img src="${product.image}" class="w-full h-[200px] object-contain mx-auto" alt="${product.name}" />
+          <h3 class="mt-3 font-semibold text-sm line-clamp-2">${product.name}</h3>
+          <p class="text-black text-sm bg-orange-100 pl-[10px] py-1 w-fit border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${product.installment}</span> сум/мес</p>
+          <p class="font-semibold text-lg mt-1">${product.newPrice} сум</p>
+          <button class="mt-auto add-to-cart bg-yellow-400 w-full duration-300 ease-in hover:bg-yellow-300 py-2 rounded-lg font-semibold" data-id="${product.id}" data-product='${JSON.stringify(product)}'>
+            В корзину
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function attachEventListeners() {
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const product = JSON.parse(e.target.dataset.product);
+          addToCart(product);
+          btn.textContent = 'Добавлено!';
+          btn.classList.add('bg-green-500');
+          setTimeout(() => {
+            btn.textContent = 'В корзину';
+            btn.classList.remove('bg-green-500');
+          }, 1500);
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        const heartBtn = e.target.closest(".heart-btn");
+        if (!heartBtn) return;
+        toggleFavorite(heartBtn.dataset.id);
+        updateHeartStyles();
+        updateCounts();
+      });
+    }
+
+    function addToCart(product) {
+      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const existingItem = cartItems.find(item => item.id === product.id);
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cartItems.push({ ...product, quantity: 1 });
+      }
+
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      updateCounts();
+    }
+
+    function toggleFavorite(id) {
+      let favorites = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+      if (favorites.includes(id)) {
+        favorites = favorites.filter(item => item !== id);
+      } else {
+        favorites.push(id);
+      }
+      localStorage.setItem("favoriteIds", JSON.stringify(favorites));
+    }
+
+    function updateHeartStyles() {
+      const favorites = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+      document.querySelectorAll(".heart-btn").forEach(btn => {
+        const svg = btn.querySelector(".heart-icon");
+        if (favorites.includes(btn.dataset.id)) {
+          svg.classList.add("fill-red-500", "stroke-red-500");
+        } else {
+          svg.classList.remove("fill-red-500", "stroke-red-500");
+        }
+      });
+    }
+
+    fetchProducts();
+  </script>
+</body>
 
 </html>

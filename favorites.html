@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Избранное - Alif Shop</title>
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="header-wrap-wrap py-[20px] flex justify-center gap-7 items-center max-w-[1400px] mx-auto px-4">
+            <a href="index.html"><img width="113" src="./imgs/Container.png" alt="Alif Shop Logo"></a>
+
+            <div class="formelm flex justify-between gap-8">
+                <a href="index.html">
+                    <button
+                        class="flex items-center gap-2 bg-[#FFBE1F] p-[12px] rounded-[8px] hover:bg-[#f0b31a] transition">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        </svg>
+                        Главная
+                    </button>
+                </a>
+
+                <div
+                    class="input-box flex w-[385px] rounded-[8px] justify-between border-[2px] border-[#FFBE1F] focus-within:border-[#ffbb10]">
+                    <input placeholder="Qidirish..." class="h-[48px] p-[12px] outline-none focus:outline-none flex-1"
+                        type="text">
+                    <button
+                        class="bg-[#FFBE1F] w-15 flex items-center justify-center px-4 hover:bg-[#f0b31a] transition">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="flex items-center gap-8">
+                <div class="flex items-center gap-6">
+                    <a href="cart.html"
+                        class="flex flex-col items-center text-center text-sm hover:text-black transition relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                d="M3 3h2l.4 2M7 13h10l3-8H6.4M7 13L5.4 6M7 13l-2 6h12" />
+                        </svg>
+                        <span class="text-xs">Savat</span>
+                        <span id="cartCount"
+                            class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </a>
+
+                    <a href="favorites.html"
+                        class="flex flex-col items-center text-center text-sm text-yellow-500 transition relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" viewBox="0 0 24 24"
+                            fill="currentColor" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                        </svg>
+                        <span class="text-xs font-bold">Saralanganlar</span>
+                        <span id="favCount"
+                            class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        class="px-4 py-2 border border-yellow-300 rounded-lg text-sm font-medium shadow-sm hover:shadow transition">
+                        Kirish
+                    </a>
+
+                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                        <a href="#" class="hover:text-gray-600">RUS</a>
+                        <span class="text-gray-300">/</span>
+                        <a href="#" class="hover:text-gray-600 font-medium">UZB</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-8">
+        <div class="container max-w-[1400px] mx-auto px-4">
+            <div class="flex items-center gap-3 mb-8">
+                <a href="index.html" class="text-gray-500 hover:text-yellow-500">Главная</a>
+                <span class="text-gray-400">/</span>
+                <span class="text-gray-700 font-semibold">Избранное</span>
+            </div>
+
+            <div class="flex items-center justify-between mb-8">
+                <h1 class="text-4xl font-bold">Избранное</h1>
+                <button id="clearFavorites" class="text-red-500 hover:text-red-600 font-medium hidden">
+                    Очистить все
+                </button>
+            </div>
+
+            <div id="emptyFavorites" class="hidden text-center py-20">
+                <svg class="w-32 h-32 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                </svg>
+                <h2 class="text-2xl font-semibold text-gray-600 mb-4">Список избранного пуст</h2>
+                <p class="text-gray-500 mb-6">Добавьте товары в избранное, чтобы не потерять их</p>
+                <a href="index.html"
+                    class="inline-block bg-yellow-400 hover:bg-yellow-300 px-8 py-3 rounded-lg font-semibold transition">
+                    Перейти к покупкам
+                </a>
+            </div>
+
+            <div id="favoritesContent" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Favorites will be rendered here -->
+            </div>
+
+            <!-- Quick Actions -->
+            <div id="quickActions"
+                class="hidden mt-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-xl p-6 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Хотите купить все сразу?</h3>
+                        <p class="text-sm opacity-90">Добавьте все избранные товары в корзину одним кликом</p>
+                    </div>
+                    <button id="addAllToCart"
+                        class="bg-white text-gray-800 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                        Добавить все в корзину
+                    </button>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div id="favStats" class="hidden mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-xl shadow p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-yellow-100 rounded-full p-3">
+                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold" id="totalFavItems">0</p>
+                            <p class="text-gray-600 text-sm">Товаров в избранном</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-green-100 rounded-full p-3">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold" id="totalFavValue">0</p>
+                            <p class="text-gray-600 text-sm">Общая стоимость</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-blue-100 rounded-full p-3">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold" id="avgPrice">0</p>
+                            <p class="text-gray-600 text-sm">Средняя цена</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#1f2227] text-gray-300 pt-12 pb-6 px-6 md:px-16 mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 max-w-[1400px] mx-auto">
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Hujjatlar</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Sotish uchun umumiy shartlar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Nizom</a></li>
+                    <li><a href="#" class="hover:text-white transition">Guvohnoma</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Servis</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Namoz vaqti</a></li>
+                    <li><a href="#" class="hover:text-white transition">Muddatli to'lov islomda</a></li>
+                    <li><a href="#" class="hover:text-white transition">alif shopda soting!</a></li>
+                    <li><a href="#" class="hover:text-white transition">Qaytarish</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Tovarlar katalogi</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Smartfonlar va telefonlar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Gadjetlar</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-lg mb-3 text-white">Axborot xizmati</h3>
+                <div class="space-y-2 text-sm">
+                    <p class="hover:text-white cursor-pointer transition">@alifshop_uz</p>
+                    <p class="hover:text-white cursor-pointer transition">+998 555 12 12 12</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-gray-700 my-6">
+        <p class="text-sm text-gray-400 text-center">2025 © alifshop.uz</p>
+    </footer>
+
+    <script>
+        let allProducts = [];
+
+        function updateCounts() {
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const favIds = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+
+            const cartCount = document.getElementById('cartCount');
+            const favCount = document.getElementById('favCount');
+
+            if (cartItems.length > 0) {
+                cartCount.textContent = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+
+            if (favIds.length > 0) {
+                favCount.textContent = favIds.length;
+                favCount.classList.remove('hidden');
+            } else {
+                favCount.classList.add('hidden');
+            }
+        }
+
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+
+        async function loadProducts() {
+            try {
+                const res = await fetch('http://localhost:3001/product');
+                allProducts = await res.json();
+                renderFavorites();
+                updateCounts();
+            } catch (e) {
+                console.error('Error fetching products:', e);
+            }
+        }
+
+        function renderFavorites() {
+            const favIds = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+            const favoritesContainer = document.getElementById('favoritesContent');
+            const emptyFavorites = document.getElementById('emptyFavorites');
+            const clearBtn = document.getElementById('clearFavorites');
+            const quickActions = document.getElementById('quickActions');
+            const favStats = document.getElementById('favStats');
+
+            if (favIds.length === 0) {
+                emptyFavorites.classList.remove('hidden');
+                favoritesContainer.classList.add('hidden');
+                clearBtn.classList.add('hidden');
+                quickActions.classList.add('hidden');
+                favStats.classList.add('hidden');
+                return;
+            }
+
+            emptyFavorites.classList.add('hidden');
+            favoritesContainer.classList.remove('hidden');
+            clearBtn.classList.remove('hidden');
+            quickActions.classList.remove('hidden');
+            favStats.classList.remove('hidden');
+
+            favoritesContainer.innerHTML = '';
+
+            const favoriteProducts = allProducts.filter(product => favIds.includes(product.id));
+
+            favoriteProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl shadow p-4 flex flex-col gap-3 hover:shadow-lg transition relative group';
+                card.innerHTML = `
+          <button class="remove-fav absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition" data-id="${product.id}">
+            <svg class="w-6 h-6 text-red-500 hover:text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <img src="${product.image}" class="w-full h-[200px] object-contain mx-auto" alt="${product.name}" />
+          <h3 class="font-semibold text-sm line-clamp-2">${product.name}</h3>
+          <p class="text-black text-sm bg-orange-100 pl-[10px] py-1 w-fit border-yellow-300 border-[2px] border-solid rounded-xl">от <span class="font-bold">${product.installment}</span> сум/мес</p>
+          <p class="font-semibold text-lg">${product.newPrice} сум</p>
+          <div class="flex gap-2 mt-auto">
+            <button class="add-to-cart-fav flex-1 bg-yellow-400 hover:bg-yellow-300 py-2 rounded-lg font-semibold transition" data-product='${JSON.stringify(product)}'>
+              В корзину
+            </button>
+            <button class="share-btn bg-gray-100 hover:bg-gray-200 px-3 rounded-lg transition" data-name="${product.name}">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+            </button>
+          </div>
+        `;
+                favoritesContainer.appendChild(card);
+            });
+
+            calculateFavStats(favoriteProducts);
+            attachFavoriteEventListeners();
+        }
+
+        function calculateFavStats(favoriteProducts) {
+            const totalItems = favoriteProducts.length;
+            let totalValue = 0;
+
+            favoriteProducts.forEach(product => {
+                const price = parseInt(product.newPrice.replace(/\s/g, ''));
+                totalValue += price;
+            });
+
+            const avgPrice = totalItems > 0 ? Math.floor(totalValue / totalItems) : 0;
+
+            document.getElementById('totalFavItems').textContent = totalItems;
+            document.getElementById('totalFavValue').textContent = formatPrice(totalValue) + ' сум';
+            document.getElementById('avgPrice').textContent = formatPrice(avgPrice) + ' сум';
+        }
+
+        function attachFavoriteEventListeners() {
+            document.querySelectorAll('.add-to-cart-fav').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const product = JSON.parse(e.target.dataset.product);
+                    addToCart(product);
+                    e.target.textContent = 'Добавлено!';
+                    e.target.classList.add('bg-green-500');
+                    setTimeout(() => {
+                        e.target.textContent = 'В корзину';
+                        e.target.classList.remove('bg-green-500');
+                    }, 1500);
+                });
+            });
+
+            document.querySelectorAll('.remove-fav').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = e.target.closest('.remove-fav').dataset.id;
+                    removeFromFavorites(id);
+                });
+            });
+
+            document.querySelectorAll('.share-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const name = e.target.closest('.share-btn').dataset.name;
+                    shareProduct(name);
+                });
+            });
+        }
+
+        function addToCart(product) {
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+            const existingItem = cartItems.find(item => item.id === product.id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cartItems.push({ ...product, quantity: 1 });
+            }
+
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            updateCounts();
+        }
+
+        function removeFromFavorites(id) {
+            let favIds = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+            favIds = favIds.filter(favId => favId !== id);
+            localStorage.setItem("favoriteIds", JSON.stringify(favIds));
+            renderFavorites();
+            updateCounts();
+        }
+
+        function shareProduct(name) {
+            if (navigator.share) {
+                navigator.share({
+                    title: name,
+                    text: `Посмотрите этот товар на Alif Shop: ${name}`,
+                    url: window.location.href
+                });
+            } else {
+                alert('Функция "Поделиться" не поддерживается вашим браузером');
+            }
+        }
+
+        document.getElementById('clearFavorites').addEventListener('click', () => {
+            if (confirm('Вы уверены, что хотите очистить все избранное?')) {
+                localStorage.removeItem('favoriteIds');
+                renderFavorites();
+                updateCounts();
+            }
+        });
+
+        document.getElementById('addAllToCart').addEventListener('click', () => {
+            const favIds = JSON.parse(localStorage.getItem("favoriteIds")) || [];
+            const favoriteProducts = allProducts.filter(product => favIds.includes(product.id));
+
+            favoriteProducts.forEach(product => {
+                addToCart(product);
+            });
+
+            alert(`Добавлено ${favoriteProducts.length} товаров в корзину!`);
+            setTimeout(() => {
+                window.location.href = 'cart.html';
+            }, 1000);
+        });
+
+        loadProducts();
+    </script>
+</body>
+
+</html>
