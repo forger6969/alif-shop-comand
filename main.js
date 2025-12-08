@@ -18,10 +18,10 @@ function startTimer() {
         let minutes = Math.floor((diff / (1000 * 60)) % 60);
         let seconds = Math.floor((diff / 1000) % 60);
 
-        document.getElementById("d").textContent = days;
-        document.getElementById("h").textContent = hours;
-        document.getElementById("m").textContent = minutes;
-        document.getElementById("s").textContent = seconds;
+        // document.getElementById("d").textContent = days;
+        // document.getElementById("h").textContent = hours;
+        // document.getElementById("m").textContent = minutes;
+        // document.getElementById("s").textContent = seconds;
     }
 
     update();
@@ -357,3 +357,28 @@ let finc = async () => {
 function katalos() {
   window.location.href = "katalog_xob.html"
 }
+const openBtn = document.getElementById("openCatalog");
+const closeBtn = document.getElementById("closeCatalog");
+const modal = document.getElementById("catalogModal");
+
+openBtn.addEventListener("click", (e) => {
+    e.preventDefault();      
+    e.stopPropagation();    
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+});
+
+closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+    }
+});
